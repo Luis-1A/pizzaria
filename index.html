@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="estilo.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>blá blá Pizza</title>
+</head>
+
+<body>
+  <header>
+    <div class="menu-openner"><span>0</span>🛒</div>
+  </header>
+  <main>
+    <h1> bla blaPizzas <br><span>Menu</span></h1>
+    <div class="pizza-area"></div>
+  </main>
+  <!--colocar 3 botoes-->
+  <aside>
+    <div class="cart--area">
+
+      <div class="menu-closer">❌</div>
+      <h1>Suas Pizzas</h1>
+      <div class="cart"></div>
+
+      <div class="cart--details">
+        <div class="cart-value subtotal">
+          <span>Subtotal</span>
+          <span class="cart-value-subtotal">R$ --</span>
+        </div>
+        <div class="cart-value desconto">
+          <span>Adicional da entrega  (10%)</span>
+          <span class="cart-value-desconto">R$ --</span>
+        </div>
+        <div class="cart-value total big">
+          <span>Total</span>
+          <span class="cart-value-total">R$ --</span>
+        </div>
+        <div class="cart--finalizar">Finalizar a compra</div>
+      </div>
+      
+
+    </div>
+    
+  </aside>
+
+  
+  <div class="pizza-modal">
+    <div class="pizza-modal-content">
+      <div class="pizza-info--cancelMobileButton" onclick=Modal.close()>
+        Voltar
+      </div>
+
+      <img class="pizza-modal-img" src="" />
+
+      <div class="pizza-info">
+        <h1>--</h1>
+        <div class="pizza-info--desc">--</div>
+        <div class="pizza-info--sizearea">
+          <div class="pizza-info--sector">Tamanho</div>
+          <div class="pizza-info--sizes"> 
+            <div data-key="2" class="pizza-info--size selected">GRANDE <span>--</span></div>
+          </div>
+        </div>
+
+        <div class="pizza-info--pricearea">
+          <div class="pizza-info--sector">Preço</div>
+          <div class="pizza-info--price">
+            <div class="pizza-info--actualPrice">R$ --</div>
+            <div class="pizza-info--qtarea">
+              <button class="pizza-info--qtmenos">-</button>
+              <div class="pizza-info--qt">1</div>
+              <button class="pizza-info--qtmais">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-info--addButton">Adicionar ao carrinho</div>
+        <div class="pizza-info--cancelButton" onclick=Modal.close()>
+          Cancelar
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script type="text/javascript" src="pizzaList.js"></script>
+  <script type="text/javascript" src="finalizar.js"></script>
+  <script type="text/javascript" src="Modal.js"></script>
+  <script type="text/javascript" src="Cart.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
