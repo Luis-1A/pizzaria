@@ -1,44 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="tela.scss" />
+  <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="estilo.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title> PIZZA DELIVERY</title>
 </head>
+
 <body>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
-    <div class="pizza">🍕</div>
+  <header>
+    <div class="menu-openner"><span>0</span>🛒</div>
+  </header>
+  <main>
+    <h1> PIZZA DELIVERY <br>
+      <span>ENTREGA GRÁTIS</span> <br>
+        <span>MENU</span></h1>
+    <div class="pizza-area"></div>
+  </main>
+  <!--colocar 3 botoes-->
+  <aside>
+    <div class="cart--area">
+
+      <div class="menu-closer">❌</div>
+      <h1>Suas Pizzas</h1>
+      <div class="cart"></div>
+
+      <div class="cart--details">
+        <div class="cart-value subtotal">
+          <span>Subtotal</span>
+          <span class="cart-value-subtotal">R$ --</span>
+        </div>
+        <div class="cart-value desconto">
+          <span>Adicional da entrega  (10%)</span> <! -- SE A ENTREGA E GRATIS NAO PRECISA DE TAXA -->
+          <span class="cart-value-desconto">R$ --</span>
+        </div>
+        <div class="cart-value total big">
+          <span>Total</span>
+          <span class="cart-value-total">R$ --</span>
+        </div>
+        <div class="cart--finalizar">Finalizar a compra</div>
+      </div>
+      
+
+    </div>
+    
+  </aside>
+
+  
+  <div class="pizza-modal">
+    <div class="pizza-modal-content">
+      <div class="pizza-info--cancelMobileButton" onclick=Modal.close()>
+        Voltar
+      </div>
+
+      <img class="pizza-modal-img" src="" />
+
+      <div class="pizza-info">
+        <h1>--</h1>
+        <div class="pizza-info--desc">--</div>
+        <div class="pizza-info--sizearea">
+          <div class="pizza-info--sector">Tamanho</div>
+          <div class="pizza-info--sizes"> 
+            <div data-key="2" class="pizza-info--size selected">GRANDE <span>--</span></div>
+          </div>
+        </div>
+
+        <div class="pizza-info--pricearea">
+          <div class="pizza-info--sector">Preço</div>
+          <div class="pizza-info--price">
+            <div class="pizza-info--actualPrice">R$ --</div>
+            <div class="pizza-info--qtarea">
+              <button class="pizza-info--qtmenos">-</button>
+              <div class="pizza-info--qt">1</div>
+              <button class="pizza-info--qtmais">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pizza-info--addButton">Adicionar ao carrinho</div>
+        <div class="pizza-info--cancelButton" onclick=Modal.close()>
+          Cancelar
+        </div>
+      </div>
+    </div>
   </div>
   
-  <div class="rotating-pizza-outer">
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-    <div class="pizza-outer">🍕</div>
-  </div>
-   <script src="página.js"></script>
+
+  <script src="pizzaList.js"></script>
+  <script src="finalizar.js"></script>
+  <script src="Modal.js"></script>
+  <script src="Cart.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>
