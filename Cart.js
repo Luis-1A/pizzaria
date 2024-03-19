@@ -96,8 +96,8 @@ const Cart = {
   },
 
   setValues() {
-    Cart.desconto = Cart.subtotal * 0.1; // Calcula o desconto
-    Cart.total = Cart.subtotal + Cart.desconto; // Soma o desconto ao subtotal para obter o total
+    Cart.desconto = Cart.subtotal * 0.1; 
+    Cart.total = Cart.subtotal + Cart.desconto; 
 
     Cart.subtotalElement.innerHTML = `R$ ${formatPrice(Cart.subtotal)}`;
     Cart.descontoElement.innerHTML = `R$ ${formatPrice(Cart.desconto)}`;
