@@ -1,0 +1,134 @@
+//Concepts from https://stackoverflow.com/questions/12813573/position-icons-into-circle
+//https://codepen.io/thebabydino/pen/wzZKGX
+
+$fs-pizza: 5em;
+$n-pizza: 12;
+$ba: 360deg/$n-pizza; // base angle
+$d-ring: 8.25em; // ring diameter
+$t: 2s; // animation duration
+$bw: .5*$fs-pizza; // ring thickness
+$tx: .5*($d-ring - $bw);
+
+body {
+  background-color: black;
+}
+
+$n-pizza-center: 1;
+$ba-center: 360deg/$n-pizza-center; // base angle
+
+.rotating-pizza-center {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  animation: rp-center .5*$n-pizza*$t linear infinite;
+  //border: dashed 1px;
+  //outline: 5px dotted green;
+}
+
+@keyframes rp-center { 0% { transform: rotate(-6turn); } }
+
+
+$n-pizza-inner: 4;
+$ba-inner: 360deg/$n-pizza-inner; // base angle
+
+.rotating-pizza-inner {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  animation: rp-inner .5*$n-pizza*$t linear infinite;
+  //border: dashed 1px;
+  //outline: 5px dotted green;
+}
+
+@keyframes rp-inner { 0% { transform: rotate(1turn); } }
+
+
+.rotating-pizza {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  animation: rp .5*$n-pizza*$t linear infinite;
+  //border: dashed 1px;
+  //outline: 5px dotted green;
+  
+  // &:after {
+	// 	box-sizing: border-box;
+	// 	margin: -.5*$d-ring;
+	// 	border: solid $bw $c;
+	// 	width: $d-ring; height: $d-ring;
+	// 	box-shadow: $sh, inset $sh;
+	// 	content: '';
+	// }
+}
+
+@keyframes rp { 0% { transform: rotate(-2turn); } }
+
+$n-pizza-outer: 20;
+$ba-outer: 360deg/$n-pizza-outer; // base angle
+
+.rotating-pizza-outer {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  animation: rp-outer .5*$n-pizza-outer*$t linear infinite;
+  //border: dashed 1px;
+  //outline: 5px dotted green;
+}
+
+@keyframes rp-outer { 0% { transform: rotate(1.5turn); } }
+
+.pizza {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  font-size: 1px;
+
+  @for $i from 0 to $n-pizza {
+    &:nth-child(#{$i + 1}) {
+      transform: rotate($i*$ba)
+        				translate($tx + 220em) scale(100);
+    }
+  }
+}
+
+.pizza-center {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  font-size: 1px;
+
+  @for $i from 0 to $n-pizza-center {
+    &:nth-child(#{$i + 1}) {
+      transform: rotate($i*$ba-center)
+        				scale(100);
+    }
+  }
+}
+
+.pizza-inner {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  font-size: 1px;
+
+  @for $i from 0 to $n-pizza-inner {
+    &:nth-child(#{$i + 1}) {
+      transform: rotate($i*$ba-inner)
+        				translate($tx + 120em) scale(100);
+    }
+  }
+}
+
+.pizza-outer {
+  top: 50%; 
+  left: 50%;
+  position: absolute;
+  font-size: 1px;
+
+  @for $i from 0 to 20 {
+    &:nth-child(#{$i + 1}) {
+      transform: rotate($i*$ba-outer)
+        				translate($tx + 320em) scale(100);
+    }
+  }
+}
