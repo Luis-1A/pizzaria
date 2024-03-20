@@ -2,10 +2,8 @@ const Cart = {
   cartElement: sel("aside"),
   cartPizzas: sel(".cart"),
   subtotalElement: sel(".cart-value-subtotal"),
-  descontoElement: sel(".cart-value-desconto"),
   totalElement: sel(".cart-value-total"),
   subtotal: 0,
-  desconto: 0,
   total: 0,
 
   setPizzaItemDOM(pizzaItem, cartIndex) {
@@ -91,16 +89,12 @@ const Cart = {
   reset() {
     Cart.cartPizzas.innerHTML = "";
     Cart.subtotal = 0;
-    Cart.desconto = 0;
     Cart.total = 0;
   },
 
   setValues() {
-    Cart.desconto = Cart.subtotal * 0.1; 
-    Cart.total = Cart.subtotal + Cart.desconto; 
-
+    Cart.total = Cart.subtotal; // Total é igual ao subtotal, sem desconto
     Cart.subtotalElement.innerHTML = `R$ ${formatPrice(Cart.subtotal)}`;
-    Cart.descontoElement.innerHTML = `R$ ${formatPrice(Cart.desconto)}`;
     Cart.totalElement.innerHTML = `R$ ${formatPrice(Cart.total)}`;
   },
 
