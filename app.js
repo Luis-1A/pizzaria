@@ -1,4 +1,5 @@
-const pizzaArea = sel(".pizza-area");
+const pizzaArea = document.querySelector(".pizza-area");
+
 
 let cart = [];
 let modalKey = 0;
