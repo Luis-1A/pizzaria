@@ -1,93 +1,90 @@
 [
- {
-    id: 1,
-    name: "Mussarela",
-    img: "pizzamusssarela.jpg",
-    prices: [14.99, 14.99, 14.99],
-    sizes: ["000g", "000g", "000g"],
-    description:"musssrela e molho de tomate.",
-  },
- {
-    id: 2,
-    name: "Alho e Óleo",
-    img: "pizzaalhoeoleo.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"mussarela, alho e óleo",
-  },
- {
-    id: 3,
-    name: "Marguerita",
-    img: "pizzamarguerita.png",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"mussarela, tomate e manjericão",
-  },
- {
-    id: 4,
-    name: "Portuguesa",
-    img: "pizzaportuguesa.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Presunto, mussarela, ovos e azeitona",
-  },
- {
-    id: 5,
-    name: "Bacon",
-    img: "pizzabacon.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Bacon, cebola, ovos e mussarela",
-  },
- {
-    id: 6,
-    name: "Calabresa",
-    img: "pizzacalabresa.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Calabresa e cebola",
-  },
- {
-    id: 7,
-    name: "Baiana",
-    img: "pizzabaiana.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Calabresa, ovos, pimenta e mussarela",
-  },
-
- {
-    id: 8,
-    name: "Moda da casa",
-    img: "pizzamoda.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Presunto, mussarela e ovos",
-  },
- {
-    id: 9,
-    name: "Três Queijos",
-    img: "pizza3queijos.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Mussarela, parmessão e requeijão",
-  },
-
-  {
-    id: 10,
-    name: "Frango com Catupiry",
-    img: "pizzafrango.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Mussarela, Frango e Catupiry.",
-  },
-
-  {
-    id: 11,
-    name: "Vegetariana",
-    img: "pizzavegetariana.jpg",
-    prices: [24.99, 24.99, 24.99],
-    sizes: ["320g", "530g", "860g"],
-    description:"Mussarela, brócolis e milho",
-  },
-];
+    {
+        "id": 1,
+        "name": "Mussarela",
+        "img": "pizzamusssarela.jpg",
+        "prices": [14.99, 14.99, 14.99],
+        "sizes": ["000g", "000g", "000g"],
+        "description": "musssrela e molho de tomate."
+    },
+    {
+        "id": 2,
+        "name": "Alho e Óleo",
+        "img": "pizzaalhoeoleo.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "mussarela, alho e óleo"
+    },
+    {
+        "id": 3,
+        "name": "Marguerita",
+        "img": "pizzamarguerita.png",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "mussarela, tomate e manjericão"
+    },
+    {
+        "id": 4,
+        "name": "Portuguesa",
+        "img": "pizzaportuguesa.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela, ovos e azeitona"
+    },
+    {
+        "id": 5,
+        "name": "Bacon",
+        "img": "pizzabacon.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Bacon, cebola, ovos e mussarela"
+    },
+    {
+        "id": 6,
+        "name": "Calabresa",
+        "img": "pizzacalabresa.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa e cebola"
+    },
+    {
+        "id": 7,
+        "name": "Baiana",
+        "img": "pizzabaiana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa, ovos, pimenta e mussarela"
+    },
+    {
+        "id": 8,
+        "name": "Moda da casa",
+        "img": "pizzamoda.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela e ovos"
+    },
+    {
+        "id": 9,
+        "name": "Três Queijos",
+        "img": "pizza3queijos.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, parmessão e requeijão"
+    },
+    {
+        "id": 10,
+        "name": "Frango com Catupiry",
+        "img": "pizzafrango.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, Frango e Catupiry."
+    },
+    {
+        "id": 11,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    }
+]
