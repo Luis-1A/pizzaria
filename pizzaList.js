@@ -2,7 +2,7 @@
 let PizzaList = [
  {
     id: 1,
-    name: "Dois Queijos",
+    name: "Mussarela",
     img: "pizza5.png",
     prices: [24.99, 24.99, 24.99],
     sizes: ["000g", "000g", "000g"],
@@ -10,7 +10,7 @@ let PizzaList = [
   },
  {
     id: 2,
-    name: "Quatro Queijos",
+    name: "Alho e Óleo",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -18,7 +18,7 @@ let PizzaList = [
   },
  {
     id: 3,
-    name: "Quatro Queijos",
+    name: "Marguerita",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -26,7 +26,7 @@ let PizzaList = [
   },
  {
     id: 4,
-    name: "Quatro Queijos",
+    name: "Portuguesa",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -34,7 +34,7 @@ let PizzaList = [
   },
  {
     id: 5,
-    name: "Quatro Queijos",
+    name: "Bacon",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -42,7 +42,7 @@ let PizzaList = [
   },
  {
     id: 6,
-    name: "Quatro Queijos",
+    name: "Calabresa",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -50,7 +50,7 @@ let PizzaList = [
   },
  {
     id: 7,
-    name: "Quatro Queijos",
+    name: "Baiana",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -59,7 +59,7 @@ let PizzaList = [
 
  {
     id: 8,
-    name: "Quatro Queijos",
+    name: "Moda da casa",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -67,7 +67,7 @@ let PizzaList = [
   },
  {
     id: 9,
-    name: "Quatro Queijos",
+    name: "Três Queijos",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
@@ -76,7 +76,16 @@ let PizzaList = [
 
   {
     id: 10,
-    name: "Quatro Queijos",
+    name: "Frango com Catupiry",
+    img: "pizza5.png",
+    prices: [10.0, 15.0, 17.45],
+    sizes: ["320g", "530g", "860g"],
+    description:"Se é queijo que você quer @, então essa pizza é para você!",
+  },
+
+  {
+    id: 11,
+    name: "Vegetariana",
     img: "pizza5.png",
     prices: [10.0, 15.0, 17.45],
     sizes: ["320g", "530g", "860g"],
