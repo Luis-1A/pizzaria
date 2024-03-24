@@ -32,6 +32,9 @@ header = header.innerHTML = `<div class="menu-area">
                 <a href="https://wa.me/+556191947884" target="_blank">
                     <li>Contato</li>
                 </a>
+                <a href="cria arquivo" target="_bank">
+                  <li>pedidos</li>
+                  </a>
             </ul>
         </div>
     </nav>
