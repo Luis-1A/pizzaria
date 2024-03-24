@@ -29,7 +29,7 @@ header = header.innerHTML = `<div class="menu-area">
                 <a href="depois eu colocoum link" target="_blank">
                     <li>Sobre</li>
                 </a>
-                <a href="https://wa.me/+556191947884" target="_blank">
+                <a href="https://wa.me/+5561981240738" target="_blank">
                     <li>Contato</li>
                 </a>
                 <a href="login/login.html" target="_bank">
