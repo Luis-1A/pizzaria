@@ -12,7 +12,7 @@ body * {
 .main-login {
   width: 100vw;
   height: 100vh;
-  background: #201b2c;
+  background: #f8f1e9; /* Cor de fundo da pizzaria */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ body * {
 }
 
 .left-login > h1 {
-  color: #77ffc0;
+  color: #ff7f50; /* Cor do título - Laranja */
   font-size: 2.5vw;
 }
 
@@ -51,13 +51,13 @@ body * {
   align-items: center;
   flex-direction: column;
   padding: 30px 35px;
-  background: #2f2841;
+  background: #f8f1e9; /* Cor de fundo da pizzaria */
   border-radius: 20px;
   box-shadow: 0px 10px 40px #00000056;
 }
 
 .card-login > h1 {
-  color: #00ff88;
+  color: #ff7f50; /* Cor do título - Laranja */
   font-weight: 800;
   margin: 0;
 }
@@ -76,8 +76,8 @@ body * {
   border: none;
   border-radius: 10px;
   padding: 15px;
-  background: #514869;
-  color: #f0ffffde;
+  background: #faf0e6; /* Cor de fundo do campo de entrada - Bege */
+  color: #2f4f4f; /* Cor do texto do campo de entrada - Azul escuro */
   font-size: 12pt;
   box-shadow: 0px 10px 40px #00000056;
   outline: none;
@@ -85,12 +85,12 @@ body * {
 }
 
 .textfield > label {
-  color: #f0ffffde;
+  color: #2f4f4f; /* Cor do texto do rótulo - Azul escuro */
   margin-bottom: 10px;
 }
 
 .textfield > input::placeholder {
-  color: #f0ffff94;
+  color: #a9a9a9; /* Cor do texto do espaço reservado - Cinza */
 }
 
 .btn-login {
@@ -103,10 +103,10 @@ body * {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 3px;
-  color: #2b134b;
-  background: #00ff88;
+  color: #fff; /* Cor do texto do botão - Branco */
+  background: #ff7f50; /* Cor de fundo do botão - Laranja */
   cursor: pointer;
-  box-shadow: 0px 10px 40px -12px #00ff8052;
+  box-shadow: 0px 10px 40px -12px #ff7f5052; /* Sombra do botão */
 }
 
 @media only screen and (max-width: 950px){
