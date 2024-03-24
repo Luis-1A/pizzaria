@@ -239,14 +239,15 @@ body {
 }
 
 footer {
-    display: block;
-    height: 100px;
-    font-size: .7rem;
-    background: #ff5232;
-    text-align: center;
-    line-height: 100px;
-    font-weight: 500
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
+
 
 footer a {
     position: relative;
