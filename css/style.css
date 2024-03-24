@@ -1,19 +1,21 @@
-@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap";
+
+
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap";
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif
+    font-family: "Montserrat", sans-serif;
 }
 
 body {
-    background-color: #ff0f0f;
+    background-color: #ffecd9; /* Cor de fundo suave */
     font-size: 15px;
     display: flex;
     flex-direction: column;
     margin: 0;
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 .loader-content {
@@ -23,7 +25,7 @@ body {
     bottom: 0;
     right: 0;
     z-index: 0;
-    background: rgba(255, 0, 0, .9); /* Vermelho com alguma transparência */
+    background: rgba(255, 204, 0, 0.9); /* Amarelo com alguma transparência */
     display: flex;
     text-align: center;
     justify-content: center;
@@ -35,7 +37,7 @@ body {
 
 .display {
     opacity: 1;
-    z-index: 500
+    z-index: 500;
 }
 
 .loader-circle {
@@ -43,7 +45,7 @@ body {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    animation: ring 2s linear infinite
+    animation: ring 2s linear infinite;
 }
 
 .loader-circle::before {
@@ -54,65 +56,63 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, .3)
+    box-shadow: 0 0 5px rgba(255, 255, 255, .3);
 }
 
 @keyframes ring {
     0% {
         transform: rotate(0deg);
-        box-shadow: 1px 3px 2px #fab427
+        box-shadow: 1px 3px 2px #a38e32; /* Sombra dourada */
     }
-
     50% {
         transform: rotate(180deg);
-        box-shadow: 1px 3px 2px #fab427
+        box-shadow: 1px 3px 2px #a38e32; /* Sombra dourada */
     }
-
     100% {
         transform: rotate(360deg);
-        box-shadow: 1px 3px 2px #fab427
+        box-shadow: 1px 3px 2px #a38e32; /* Sombra dourada */
     }
 }
 
 .loader-text {
-    color: #fab427;
-    font-size: 10px;
+    color: #a38e32; /* Amarelo dourado */
+    font-size: 18px; /* Tamanho de fonte aumentado */
     text-transform: uppercase;
     letter-spacing: .5px;
     line-height: 100px;
-    animation: text 2s ease-in-out infinite
+    animation: text 2s ease-in-out infinite;
 }
 
 @keyframes text {
     50% {
-        color: #fff
+        color: #fff; /* Texto fica branco durante metade da animação */
     }
 }
 
 .container {
     margin-top: 75px;
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
 .container-area {
     width: 1300px;
     display: flex;
     flex-direction: row;
-    margin: 25px 0
+    margin: 25px 0;
 }
 
 .models {
-    display: none
+    display: none;
 }
 
 html {
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
 }
 
 .header {
     height: 75px;
-    background: #fff;
+    background: #ffecd9; /* Cor de fundo suave */
     display: flex;
     justify-content: center;
     position: fixed;
@@ -120,7 +120,7 @@ html {
     top: 0;
     right: 0;
     z-index: 99;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, .02)
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .02);
 }
 
 .menu-area {
@@ -128,22 +128,23 @@ html {
     justify-content: space-between;
     align-items: center;
     width: 1300px;
-    background: #ff0f0f
+    background: #a38e32; /* Amarelo dourado */
 }
 
 .logo {
     display: block;
     height: 55px;
     font-size: 2rem;
-    font-weight: 600
+    font-weight: 600;
+    color: #fff; /* Cor da logo em branco */
 }
 
 .logo img {
-    height: 100%
+    height: 100%;
 }
 
 #checkbox {
-    display: none
+    display: none;
 }
 
 .menu_hamburger {
@@ -153,12 +154,12 @@ html {
     justify-content: center;
     padding: 20px;
     cursor: pointer;
-    z-index: 99
+    z-index: 99;
 }
 
 .line {
     position: absolute;
-    width: 20px
+    width: 20px;
 }
 
 .line-main::before,
@@ -170,49 +171,49 @@ html {
     width: inherit;
     height: 2px;
     border-radius: 5px;
-    background: #fab427;
-    transition: transform .5s
+    background: #fff; /* Cor das linhas em branco */
+    transition: transform .5s;
 }
 
 .line-main::before {
-    transform: translateY(-7px)
+    transform: translateY(-7px);
 }
 
 .line-main::after {
-    transform: translateY(7px)
+    transform: translateY(7px);
 }
 
 .line-split::before,
 .line-split::after {
     width: 10px;
-    transition: transform .5s, opacity .5s
+    transition: transform .5s, opacity .5s;
 }
 
 .line-split::after {
-    transform: translateX(10px)
+    transform: translateX(10px);
 }
 
 #checkbox:checked~.line-main::before {
-    transform: rotate(45deg)
+    transform: rotate(45deg);
 }
 
 #checkbox:checked~.line-main::after {
-    transform: rotate(-45deg)
+    transform: rotate(-45deg);
 }
 
 #checkbox:checked~.line-split::before {
     transform: translateX(-10px);
-    opacity: 0
+    opacity: 0;
 }
 
 #checkbox:checked~.line-split::after {
     transform: translateX(20px);
-    opacity: 0
+    opacity: 0;
 }
 
 .menu ul {
     display: flex;
-    list-style: none
+    list-style: none;
 }
 
 .menu ul a {
@@ -223,7 +224,7 @@ html {
     padding-bottom: 6px;
     display: block;
     font-size: .85rem;
-    font-weight: 500
+    font-weight: 500;
 }
 
 .menu ul a::after {
@@ -233,39 +234,42 @@ html {
     left: 50%;
     width: 0%;
     height: 1px;
-    background: #fab427;
-    transition: .2s ease-out
+    background: #fff; /* Linha de sublinhado em branco */
+    transition: .2s ease-out;
 }
 
 .menu ul a:hover::after,
 .menu .active::after {
     left: 0%;
-    width: 100%
+    width: 100%;
 }
 
 .menuMobile-area {
-    display: none
+    display: none;
 }
 
 .container-menu-mobile {
     display: none;
     line-height: 46px;
     height: 45px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .menu-openner span,
 .fa-cart-shopping {
-    color: #fab427;
-    font-size: 1.2rem
+    color: #fff; /* Ícones em branco */
+    font-size: 1.2rem;
 }
 
 .pulse {
     cursor: pointer;
     box-shadow: 0 0 0 rgba(250, 180, 39, .5);
     animation: pulse 2s infinite;
-    border-radius: 50%
+    border-radius: 50%;
 }
+
+
+
 
 @keyframes pulse {
     0% {
