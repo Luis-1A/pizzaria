@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: #ffecd9; /* Cor de fundo suave */
+    background-color: #e00303; /* Cor de fundo suave */
     font-size: 15px;
     display: flex;
     flex-direction: column;
@@ -112,7 +112,7 @@ html {
 
 .header {
     height: 75px;
-    background: #ffecd9; /* Cor de fundo suave */
+    background: #e00303; /* Cor de fundo suave */
     display: flex;
     justify-content: center;
     position: fixed;
