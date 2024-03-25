@@ -121,10 +121,23 @@
         <div class="pizzaWindowBody success">
           <div class="pedido-finalizado">
             <i class="fa-solid fa-circle-check success-img"></i>
-            <h1>faltaprogramar</h1>
+                <div class="cont_details">
+        <fieldset>
+            <legend>Contato</legend>
+            <label for='nome'>Nome</label>
+            <input type="text" class="nome" id="nome" name='nome' placeholder="Informe seu nome" required />
+            <br/>
+            <label for='endereço'>Endereço</label>
+            <input type="text" class="endereço" id="endereço" name='endereço' placeholder="Informe seu endereço" required/>
+            <br/>
+            <label for='telefone'>Telefone</label>
+            <input type="text" class="telefone" id="telefone" name='telefone' placeholder="Informe seu telefone" required/>
+            <br/>
+        </fieldset>
+    </div>
+    <input type='submit' id='submit' value='Enviar' onclick="if(verificarContato()){ calculateTotal(); clicarAlerta(); }" />
+</form>
           </div>
-          <span>falta programar</span>
-        </div>
       </div>
     </div>
   </div>
