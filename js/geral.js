@@ -164,3 +164,40 @@ document.querySelectorAll(".pizzaInfo--size").forEach((size, sizeIndex) => {
     size.classList.add("selected");
   });
 });
+document.querySelector("#submit").addEventListener("click", () => {
+  if (verificarContato()) {
+    // Coletar dados do pedido
+    const nome = document.querySelector("#nome").value;
+    const endereço = document.querySelector("#endereço").value;
+    const telefone = document.querySelector("#telefone").value;
+    const itensDoCarrinho = JSON.stringify(cart); // Supondo que 'cart' contém os itens do carrinho
+
+    // Enviar dados para o servidor (usando fetch ou XMLHttpRequest)
+    fetch("/salvar_pedido", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nome: nome,
+        endereço: endereço,
+        telefone: telefone,
+        itensDoCarrinho: itensDoCarrinho
+      })
+    })
+    .then(response => {
+      if (response.ok) {
+        // Limpar carrinho após o pedido ser salvo com sucesso
+        cart = [];
+        updateCart(); // Atualizar visualização do carrinho
+        closeModal(); // Fechar modal ou janela de pedido
+        clicarAlerta(); // Exibir mensagem de sucesso para o usuário
+      } else {
+        console.error("Erro ao enviar pedido ao servidor.");
+      }
+    })
+    .catch(error => {
+      console.error("Erro ao enviar pedido:", error);
+    });
+  }
+});
