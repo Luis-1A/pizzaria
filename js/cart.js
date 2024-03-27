@@ -1,4 +1,3 @@
-
 document
   .querySelector(".pizzaInfo--addButton")
   .addEventListener("click", () => {
@@ -134,27 +133,26 @@ function updateCart() {
 }
 
 document.querySelector(".cart--finalizar").addEventListener("click", () => {
+  // Limpar carrinho e localStorage
   cart = [];
   localStorage.clear();
   updateCart();
   document.querySelector(".fa-cart-shopping").classList.remove("pulse");
+
+  // Exibir mensagem de sucesso
   document.querySelector(".loader-content").classList.add("display");
 
   setTimeout(() => {
     document.querySelector(".loader-content").classList.remove("display");
 
-    document.querySelector(".success.pizzaWindowArea").style.opacity = 0;
+    document.querySelector(".success.pizzaWindowArea").style.opacity = 1;
     document.querySelector(".success.pizzaWindowArea").style.display = "flex";
-    setTimeout(() => {
-      document.querySelector(".success.pizzaWindowArea").style.opacity = 1;
-    }, 200);
-    document.querySelector(".success.pizzaWindowArea").style.display = "flex";
-
+    
+    // Remover a mensagem de sucesso automaticamente após algum tempo
     setTimeout(() => {
       document.querySelector(".success.pizzaWindowArea").style.opacity = 0;
       setTimeout(() => {
-        document.querySelector(".success.pizzaWindowArea").style.display =
-          "none";
+        document.querySelector(".success.pizzaWindowArea").style.display = "none";
         updateCart();
         closeModal();
       }, 200);
