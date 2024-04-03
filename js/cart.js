@@ -152,3 +152,23 @@ document.querySelector(".cart--finalizar").addEventListener("click", () => {
     });
   }, 2100);
 });
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  // Obter os valores dos campos
+  let nome = document.getElementById('nome').value;
+  let endereco = document.getElementById('endereco').value;
+  let referencia = document.getElementById('referencia').value;
+  let contato = document.getElementById('contato').value;
+
+  // Salvar as informações (exemplo usando localStorage)
+  let orderInfo = {
+    nome: nome,
+    endereco: endereco,
+    referencia: referencia,
+    contato: contato
+  };
+  localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
+
+  // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
+});
