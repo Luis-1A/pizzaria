@@ -172,7 +172,6 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
 
   // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
 });
-
 // Adicione um evento de clique aos campos do formulário para ocultar o carrinho
 document.getElementById('nome').addEventListener('focus', () => {
   document.querySelector("aside").classList.remove("show");
