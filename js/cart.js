@@ -161,7 +161,7 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
   let referencia = document.getElementById('referencia').value;
   let contato = document.getElementById('contato').value;
 
-  // Salvar as informações (exemplo usando localStorage)
+  
   let orderInfo = {
     nome: nome,
     endereco: endereco,
@@ -171,4 +171,21 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
   localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
 
   // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
+});
+
+// Adicione um evento de clique aos campos do formulário para ocultar o carrinho
+document.getElementById('nome').addEventListener('focus', () => {
+  document.querySelector("aside").classList.remove("show");
+});
+
+document.getElementById('endereco').addEventListener('focus', () => {
+  document.querySelector("aside").classList.remove("show");
+});
+
+document.getElementById('referencia').addEventListener('focus', () => {
+  document.querySelector("aside").classList.remove("show");
+});
+
+document.getElementById('contato').addEventListener('focus', () => {
+  document.querySelector("aside").classList.remove("show");
 });
