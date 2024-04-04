@@ -210,7 +210,7 @@ function enviarPedidoParaWhatsApp() {
     let subtotalCompra = totalCompra;
 
     // Valor da entrega (substitua pelo valor da entrega conforme necessário)
-    let valorEntrega = 5.00;
+    let valorEntrega = 0.00;
 
     // Calcular o valor total da compra incluindo a entrega
     let valorFinal = subtotalCompra + valorEntrega;
@@ -248,7 +248,7 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
     // Número do WhatsApp (substitua pelo número da sua empresa)
-    var numeroWhatsApp = "+556191947884";
+    var numeroWhatsApp = "+5561981240738";
 
     // Codificar o texto da mensagem para que seja válido na URL
     var textoCodificado = encodeURIComponent(mensagem);
