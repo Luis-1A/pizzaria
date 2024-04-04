@@ -50,17 +50,26 @@
       }
     }
 
-    // Simulação de dados do carrinho (substitua por dados reais)
-    var dadosDoCarrinho = {
-      items: [
-        { nome: "Pizza de Calabresa", quantidade: 2, preco: 25.00 },
-        { nome: "Pizza de Marguerita", quantidade: 1, preco: 20.00 }
-        // Adicione mais itens conforme necessário
-      ]
-    };
+  // Referência para o banco de dados
+var database = firebase.database();
 
-    // Chamar a função para exibir os detalhes do carrinho
-    exibirDetalhesDoCarrinho(dadosDoCarrinho);
+// Função para recuperar os dados do carrinho do banco de dados
+function recuperarDadosDoCarrinho() {
+  var carrinhoRef = database.ref('carrinho');
+  carrinhoRef.once('value')
+    .then(function(snapshot) {
+      var dadosDoCarrinho = snapshot.val();
+      // Chame a função para exibir os detalhes do carrinho
+      exibirDetalhesDoCarrinho(dadosDoCarrinho);
+    })
+    .catch(function(error) {
+      console.error("Erro ao recuperar os dados do carrinho do banco de dados: ", error);
+    });
+}
+
+// Chame a função para recuperar os dados do carrinho do banco de dados
+recuperarDadosDoCarrinho();
+
   </script>
 </body>
 </html>
