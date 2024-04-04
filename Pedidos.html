@@ -1,11 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Carrinho</title>
+  <style>
+    /* Estilos para a página */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+  </style>
 </head>
 <body>
-    
+  <h1>Detalhes do Carrinho</h1>
+
+  <div id="carrinho-detalhes">
+    <!-- Aqui serão exibidos os detalhes do carrinho -->
+  </div>
+
+  <script>
+    // Função para exibir os detalhes do carrinho
+    function exibirDetalhesDoCarrinho(dadosDoCarrinho) {
+      var carrinhoDetalhes = document.getElementById('carrinho-detalhes');
+      carrinhoDetalhes.innerHTML = ''; // Limpar o conteúdo anterior
+
+      // Verificar se há itens no carrinho
+      if (dadosDoCarrinho.items.length === 0) {
+        carrinhoDetalhes.innerHTML = '<p>O carrinho está vazio.</p>';
+      } else {
+        // Exibir os detalhes de cada item no carrinho
+        dadosDoCarrinho.items.forEach(function(item) {
+          var itemHtml = `
+            <div class="item">
+              <h3>${item.nome}</h3>
+              <p>Quantidade: ${item.quantidade}</p>
+              <p>Preço: R$ ${item.preco.toFixed(2)}</p>
+            </div>
+          `;
+          carrinhoDetalhes.innerHTML += itemHtml;
+        });
+      }
+    }
+
+    // Simulação de dados do carrinho (substitua por dados reais)
+    var dadosDoCarrinho = {
+      items: [
+        { nome: "Pizza de Calabresa", quantidade: 2, preco: 25.00 },
+        { nome: "Pizza de Marguerita", quantidade: 1, preco: 20.00 }
+        // Adicione mais itens conforme necessário
+      ]
+    };
+
+    // Chamar a função para exibir os detalhes do carrinho
+    exibirDetalhesDoCarrinho(dadosDoCarrinho);
+  </script>
 </body>
 </html>
