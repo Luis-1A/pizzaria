@@ -952,3 +952,6 @@ footer a:hover::after {
 .pizzaInfo--size {
       display: none;
       }
+#submit {
+      display: none;
+}
