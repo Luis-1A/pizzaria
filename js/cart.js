@@ -188,3 +188,80 @@ document.getElementById('referencia').addEventListener('focus', () => {
 document.getElementById('contato').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
+
+
+
+
+// Função para enviar o pedido para o WhatsApp
+function enviarPedidoParaWhatsApp() {
+    // Obter os valores dos campos do formulário
+    let nome = document.getElementById('nome').value;
+    let endereco = document.getElementById('endereco').value;
+    let referencia = document.getElementById('referencia').value;
+    let contato = document.getElementById('contato').value;
+
+    // Calcular o valor total da compra
+    let totalCompra = 0;
+    for (let i in cart) {
+        totalCompra += cart[i].price * cart[i].qtd;
+    }
+
+    // Calcular o subtotal da compra
+    let subtotalCompra = totalCompra;
+
+    // Valor da entrega (substitua pelo valor da entrega conforme necessário)
+    let valorEntrega = 5.00;
+
+    // Calcular o valor total da compra incluindo a entrega
+    let valorFinal = subtotalCompra + valorEntrega;
+
+    // Montar a mensagem com todas as informações
+    let mensagem = "Pedido:\n\n";
+    mensagem += "Informações do Cliente:\n";
+    mensagem += "- Nome: " + nome + "\n";
+    mensagem += "- Endereço: " + endereco + "\n";
+    mensagem += "- Referência: " + referencia + "\n";
+    mensagem += "- Contato: " + contato + "\n\n";
+
+    mensagem += "Itens do Carrinho:\n";
+    for (let i in cart) {
+        let pizzaItem = pizzas.find((item) => item.id == cart[i].id);
+        let pizzaSizeName;
+        switch (cart[i].size) {
+            case 0:
+                pizzaSizeName = "P";
+                break;
+            case 1:
+                pizzaSizeName = "M";
+                break;
+            case 2:
+                pizzaSizeName = "G";
+                break;
+        }
+        let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
+        mensagem += `${pizzaName}, quantidade: ${cart[i].qtd}\n`; // Adiciona cada item do carrinho à mensagem
+    }
+
+    // Adicionar o subtotal, o valor da entrega e o valor final da compra à mensagem
+    mensagem += "\nSubtotal: " + subtotalCompra.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
+    mensagem += "Valor da Entrega: " + valorEntrega.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
+    mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+
+    // Número do WhatsApp (substitua pelo número da sua empresa)
+    var numeroWhatsApp = "+556191947884";
+
+    // Codificar o texto da mensagem para que seja válido na URL
+    var textoCodificado = encodeURIComponent(mensagem);
+
+    // Criar o link para o WhatsApp com o texto da mensagem
+    var linkWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + textoCodificado;
+
+    // Abrir o link no WhatsApp
+    window.open(linkWhatsApp);
+}
+
+// Adicionar um evento de clique ao botão de enviar pedido
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar o envio padrão do formulário
+    enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
+});
