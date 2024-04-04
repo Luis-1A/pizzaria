@@ -1,29 +1,31 @@
-document.querySelector(".pizzaInfo--addButton").addEventListener("click", () => {
-    let size = parseInt(
-        document
-        .querySelector(".pizzaInfo--size.selected")
-        .getAttribute("data-key")
-    );
-    let identifier = pizzas[modalKey].id + "@" + size; //concatena id da pizza e tamanho
-    let keyItem = cart.findIndex((item) => item.identifier == identifier); //return
-    if (keyItem > -1) {
-        cart[keyItem].qtd += modalQt; // aumenta a qtd caso item já esteja no cart
-    } else {
-        //## Adicionando objeto na variável "cart".
-        cart.push({
-            identifier,
-            id: pizzas[modalKey].id,
-            size,
-            price: pizzas[modalKey].price[size],
-            qtd: modalQt,
-        });
-    }
-    document.querySelector(".fa-cart-shopping").classList.add("pulse");
+document
+    .querySelector(".pizzaInfo--addButton")
+    .addEventListener("click", () => {
+        let size = parseInt(
+            document
+                .querySelector(".pizzaInfo--size.selected")
+                .getAttribute("data-key")
+        );
+        let identifier = pizzas[modalKey].id + "@" + size; //concatena id da pizza e tamanho
+        let keyItem = cart.findIndex((item) => item.identifier == identifier); //return
+        if (keyItem > -1) {
+            cart[keyItem].qtd += modalQt; // aumenta a qtd caso item já esteja no cart
+        } else {
+            //## Adicionando objeto na variável "cart".
+            cart.push({
+                identifier,
+                id: pizzas[modalKey].id,
+                size,
+                price: pizzas[modalKey].price[size],
+                qtd: modalQt,
+            });
+        }
+        document.querySelector(".fa-cart-shopping").classList.add("pulse");
 
-    updateCart();
-    closeModal();
-    saveCart();
-});
+        updateCart();
+        closeModal();
+        saveCart();
+    });
 
 //Salvar itens do carrinho no localStorage
 const saveCart = () => {
@@ -47,10 +49,15 @@ function updateCart() {
         document.querySelector("aside").classList.add("show");
         document.querySelector(".cart").innerHTML = ""; //Limpar carrinho
 
-        let pedido = "Eu quero:\n"; // Inicia a frase "Eu quero" seguida dos itens do carrinho
+        let pizzasValor = 0;
+        let subtotal = 0;
+        let entrega = 0;
+        let total = 0;
 
         for (let i in cart) {
             let pizzaItem = pizzas.find((item) => item.id == cart[i].id);
+            pizzasValor += cart[i].price * cart[i].qtd;
+
             let pizzaSizeName;
             switch (cart[i].size) {
                 case 0:
@@ -64,22 +71,60 @@ function updateCart() {
                     break;
             }
             let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
-            pedido += `${pizzaName}, quantidade: ${cart[i].qtd}\n`; // Adiciona cada item do carrinho à frase
+            let cartItem = document
+                .querySelector(".models .cart--item")
+                .cloneNode(true);
+
+            cartItem.querySelector("img").src = pizzaItem.img;
+            cartItem.querySelector(".cart--item-nome").innerHTML = pizzaName;
+            cartItem.querySelector(".cart--item--qt").innerHTML = cart[i].qtd;
+            cartItem
+                .querySelector(".cart--item-qtmenos")
+                .addEventListener("click", () => {
+                    if (cart[i].qtd > 1) {
+                        cart[i].qtd--;
+                    } else {
+                        cart.splice(i, 1);
+                    }
+                    updateCart();
+                });
+            cartItem
+                .querySelector(".cart--item-qtmais")
+                .addEventListener("click", () => {
+                    cart[i].qtd++;
+                    updateCart();
+                });
+
+            document.querySelector(".cart").append(cartItem);
         }
 
-        // Número do WhatsApp (substitua pelo número da sua empresa)
-        var numeroWhatsApp = "+556191947884";
+        subtotal = pizzasValor + entrega;
+        total = subtotal;
 
-        // Codificar o texto do pedido para que seja válido na URL
-        var textoCodificado = encodeURIComponent(pedido);
-
-        // Criar o link para o WhatsApp com o texto do pedido
-        var linkWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + textoCodificado;
-
-        // Abrir o link no WhatsApp
-        window.open(linkWhatsApp);
-
-        // Continuação do restante do seu código updateCart()...
+        document.querySelector(
+            ".pizzasValor span:last-child"
+        ).innerHTML = `${pizzasValor.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
+        document.querySelector(
+            ".entrega span:last-child"
+        ).innerHTML = `${entrega.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
+        document.querySelector(
+            ".subtotal span:last-child"
+        ).innerHTML = `${subtotal.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
+        document.querySelector(
+            ".total span:last-child"
+        ).innerHTML = `${total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
     } else {
         localStorage.clear();
         document.querySelector("aside").classList.remove("show"); //Closet cart
@@ -107,8 +152,7 @@ document.querySelector(".cart--finalizar").addEventListener("click", () => {
         });
     }, 2100);
 });
-
-document.getElementById('orderForm').addEventListener('submit', function(event) {
+document.getElementById('orderForm').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita o envio padrão do formulário
 
     // Obter os valores dos campos
@@ -117,7 +161,7 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     let referencia = document.getElementById('referencia').value;
     let contato = document.getElementById('contato').value;
 
-  
+
     let orderInfo = {
         nome: nome,
         endereco: endereco,
@@ -144,4 +188,3 @@ document.getElementById('referencia').addEventListener('focus', () => {
 document.getElementById('contato').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
-
