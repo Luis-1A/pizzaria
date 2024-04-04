@@ -201,3 +201,21 @@ document.querySelector("#submit").addEventListener("click", () => {
     });
   }
 });
+// ttttttffgghjjnj
+const form = document.getElementById('orderForm');
+  const submitButton = document.getElementById('submit');
+  const mensagem = document.getElementById('mensagem');
+
+  form.addEventListener('input', function() {
+    const nome = document.getElementById('nome').value;
+    const endereco = document.getElementById('endereco').value;
+    const contato = document.getElementById('contato').value;
+
+    if (nome && endereco && contato) {
+      submitButton.style.display = 'block';
+      mensagem.textContent = '';
+    } else {
+      submitButton.style.display = 'none';
+      mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
+    }
+  });
