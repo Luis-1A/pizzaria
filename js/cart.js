@@ -188,3 +188,36 @@ document.getElementById('referencia').addEventListener('focus', () => {
 document.getElementById('contato').addEventListener('focus', () => {
   document.querySelector("aside").classList.remove("show");
 });
+function enviarParaBancoDeDados(dados) {
+  // Use AJAX para enviar os dados para o banco de dados
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://pizzaria-delivery-48e21-default-rtdb.firebaseio.com/carrinho.json', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.send(JSON.stringify({ carrinho: dados }));
+}
+
+document.getElementById('orderForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita o envio padrão do formulário
+
+  // Obter os valores dos campos do formulário
+  let nome = document.getElementById('nome').value;
+  let endereco = document.getElementById('endereco').value;
+  let referencia = document.getElementById('referencia').value;
+  let contato = document.getElementById('contato').value;
+
+  let orderInfo = {
+    nome: nome,
+    endereco: endereco,
+    referencia: referencia,
+    contato: contato,
+    carrinho: cart  // Adiciona o carrinho aos dados do pedido
+  };
+
+  // Enviar os dados para o banco de dados
+  enviarParaBancoDeDados(orderInfo);
+
+  // Limpar o carrinho no localStorage após o envio bem-sucedido
+  localStorage.removeItem('pizza_cart');
+
+  // Lógica adicional, como mostrar uma mensagem de confirmação, etc.
+});
