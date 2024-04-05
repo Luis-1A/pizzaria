@@ -11,7 +11,8 @@ $padding-area: 8%;
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background-color: $cor-10;
+ 
+  background: linear-gradient(to bottom, orange, red);
   font-size: 15px;
   display: flex;
   flex-direction: column;
