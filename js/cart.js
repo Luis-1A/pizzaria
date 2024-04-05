@@ -189,9 +189,6 @@ document.getElementById('contato').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
 
-
-
-
 // Função para enviar o pedido para o WhatsApp
 function enviarPedidoParaWhatsApp() {
     // Obter os valores dos campos do formulário
@@ -248,7 +245,7 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
     // Número do WhatsApp (substitua pelo número da sua empresa)
-    var numeroWhatsApp = "+556181240738";
+    var numeroWhatsApp = "556181240738";
 
     // Codificar o texto da mensagem para que seja válido na URL
     var textoCodificado = encodeURIComponent(mensagem);
@@ -271,3 +268,6 @@ document.getElementById('submit').addEventListener('click', function(event) {
     event.preventDefault(); // Evitar o envio padrão do formulário
     enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
 });
+
+
+
