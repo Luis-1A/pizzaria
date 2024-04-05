@@ -957,51 +957,51 @@ footer a:hover::after {
 }
 /* Estilo específico do formulário */
 form {
-    max-width: 600px; /* Aumentando ainda mais a largura máxima */
-    margin: 30px auto; /* Aumentando a margem externa */
-    padding: 40px; /* Aumentando ainda mais o espaçamento interno */
-    background: linear-gradient(to bottom, #ff6f61, #ffecd8); /* Degradê entre vermelho e laranja */
-    border-radius: 10px; /* Aumentando o raio da borda */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Aumentando a intensidade da sombra */
-    display: none; /* Inicialmente oculta o formulário */
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #ff6f61, #ffb347); /* Efeito degradê de vermelho para laranja */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 legend {
-    font-size: 1.6em; /* Aumentando ainda mais o tamanho da fonte da legenda */
+    font-size: 1.6em;
     font-weight: bold;
-    color: #fff; /* Texto branco */
+    color: #fff; /* Texto em branco para contraste */
 }
 
 label {
     display: block;
-    margin-bottom: 12px; /* Aumentando um pouco mais a margem inferior */
-    color: #fff; /* Texto branco */
+    margin-bottom: 12px;
+    color: #fff; /* Texto em branco para contraste */
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* Aumentando ainda mais o preenchimento */
-    margin-bottom: 20px; /* Aumentando ainda mais a margem inferior */
-    border: 2px solid #fff; /* Bordas brancas */
-    border-radius: 8px; /* Redefinindo o raio da borda */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #fff; /* Bordas brancas para contraste */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco transparente */
 }
 
 input[type="submit"] {
     width: 100%;
-    padding: 14px; /* Aumentando ainda mais o preenchimento */
-    background: linear-gradient(to bottom, #ff6f61, #ffecd8); /* Degradê entre vermelho e laranja */
-    color: #fff; /* Texto branco */
+    padding: 14px;
+    background-color: #fff;
+    color: #ff6f61;
     border: none;
-    border-radius: 8px; /* Redefinindo o raio da borda */
+    border-radius: 8px;
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background: linear-gradient(to bottom, #e36054, #ffd1bf); /* Degradê mais escuro em hover */
+    background-color: #e36054;
 }
 
 #mensagem {
-    margin-top: 20px; /* Aumentando ainda mais a margem superior */
-    font-size: 1.2em; /* Aumentando um pouco mais o tamanho da fonte */
-    color: #fff; /* Texto branco */
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #fff; /* Texto em branco para contraste */
 }
