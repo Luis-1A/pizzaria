@@ -957,41 +957,41 @@ footer a:hover::after {
 }
 /* Estilo específico do formulário */
 form {
-    max-width: 500px; /* Aumentando a largura máxima */
-    margin: 20px auto;
-    padding: 30px; /* Aumentando o espaçamento interno */
+    max-width: 600px; /* Aumentando ainda mais a largura máxima */
+    margin: 30px auto; /* Aumentando a margem externa */
+    padding: 40px; /* Aumentando ainda mais o espaçamento interno */
     background-color: #ffecd8; /* Laranja claro */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Aumentando o raio da borda */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Aumentando a intensidade da sombra */
 }
 
 legend {
-    font-size: 1.4em; /* Aumentando o tamanho da fonte da legenda */
+    font-size: 1.6em; /* Aumentando ainda mais o tamanho da fonte da legenda */
     font-weight: bold;
     color: #ff6f61; /* Vermelho */
 }
 
 label {
     display: block;
-    margin-bottom: 10px; /* Aumentando a margem inferior */
+    margin-bottom: 12px; /* Aumentando um pouco mais a margem inferior */
     color: #ff6f61; /* Vermelho */
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 10px; /* Aumentando o preenchimento */
-    margin-bottom: 15px; /* Aumentando a margem inferior */
-    border: 1px solid #ff6f61; /* Vermelho */
-    border-radius: 6px; /* Aumentando o raio da borda */
+    padding: 12px; /* Aumentando ainda mais o preenchimento */
+    margin-bottom: 20px; /* Aumentando ainda mais a margem inferior */
+    border: 2px solid #ff6f61; /* Aumentando a espessura da borda */
+    border-radius: 8px; /* Redefinindo o raio da borda */
 }
 
 input[type="submit"] {
     width: 100%;
-    padding: 12px; /* Aumentando o preenchimento */
+    padding: 14px; /* Aumentando ainda mais o preenchimento */
     background-color: #ff6f61; /* Vermelho */
     color: #fff;
     border: none;
-    border-radius: 6px; /* Aumentando o raio da borda */
+    border-radius: 8px; /* Redefinindo o raio da borda */
     cursor: pointer;
 }
 
@@ -1000,7 +1000,7 @@ input[type="submit"]:hover {
 }
 
 #mensagem {
-    margin-top: 15px; /* Aumentando a margem superior */
-    font-size: 1.1em; /* Aumentando o tamanho da fonte */
+    margin-top: 20px; /* Aumentando ainda mais a margem superior */
+    font-size: 1.2em; /* Aumentando um pouco mais o tamanho da fonte */
     color: #ff6f61; /* Vermelho */
 }
