@@ -99,12 +99,7 @@ body {
     justify-content: center
 }
 
-.container-area {
-    width: 1300px;
-    display: flex;
-    flex-direction: row;
-    margin: 25px 0
-}
+
 .container-area {
     background: transparent; /* Removendo o fundo branco */
 }
