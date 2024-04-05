@@ -956,43 +956,42 @@ footer a:hover::after {
       display: none;
 }
 /* Estilo específico do formulário */
-/* Estilo específico do formulário */
 form {
-    max-width: 400px;
+    max-width: 500px; /* Aumentando a largura máxima */
     margin: 20px auto;
-    padding: 20px;
+    padding: 30px; /* Aumentando o espaçamento interno */
     background-color: #ffecd8; /* Laranja claro */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 legend {
-    font-size: 1.2em;
+    font-size: 1.4em; /* Aumentando o tamanho da fonte da legenda */
     font-weight: bold;
     color: #ff6f61; /* Vermelho */
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px; /* Aumentando a margem inferior */
     color: #ff6f61; /* Vermelho */
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 10px; /* Aumentando o preenchimento */
+    margin-bottom: 15px; /* Aumentando a margem inferior */
     border: 1px solid #ff6f61; /* Vermelho */
-    border-radius: 4px;
+    border-radius: 6px; /* Aumentando o raio da borda */
 }
 
 input[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Aumentando o preenchimento */
     background-color: #ff6f61; /* Vermelho */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px; /* Aumentando o raio da borda */
     cursor: pointer;
 }
 
@@ -1001,6 +1000,7 @@ input[type="submit"]:hover {
 }
 
 #mensagem {
-    margin-top: 10px;
+    margin-top: 15px; /* Aumentando a margem superior */
+    font-size: 1.1em; /* Aumentando o tamanho da fonte */
     color: #ff6f61; /* Vermelho */
 }
