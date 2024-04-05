@@ -110,52 +110,48 @@
                   <div class="pizzaInfo--qt">1</div>
                   <button class="pizzaInfo--qtmais">+</button>
                 </div>
-                </divu>
               </div>
-              <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
-              <div class="pizzaInfo--cancelButton">Cancelar</div>
             </div>
+            <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
+            <div class="pizzaInfo--cancelButton">Cancelar</div>
           </div>
-        </div>
-        <div class="success pizzaWindowArea">
-          <div class="pizzaWindowBody success">
-            <div class="pedido-finalizado">
-              <i class="fa-solid fa-circle-check success-img"></i>
-              <div class="contato">
-                <fieldset> <legend>Contato</legend>
-                  <label for='nome'>Nome</label>
-                  <input type="text" class="nome" id="nome" name='nome' placeholder="Informe seu nome" required />
-                  <label for='endereço'>Endereço</label>
-                  <input type="text" class="endereço" id="endereço" name='endereço' placeholder="Informe seu endereço"
-                    required />
-                  <label for='telefone'>Telefone</label>
-                  <input type="text" class="telefone" id="telefone" name='telefone' placeholder="Informe seu telefone"
-                    required />
-
-                </fieldset>
-              </div>
-              <input type='submit' id='submit' value='Enviar'
-                onclick="if(verificarContato()){ calculateTotal(); clicarAlerta(); }" />
-              </form>
-            </div>
-
-            
-
-          </div>
-
         </div>
       </div>
+      <div class="success pizzaWindowArea">
+  <div class="pizzaWindowBody success">
+    <div class="pedido-finalizado">
+      <i class="fa-solid fa-circle-check success-img"></i>
+      <form id="orderForm">
+        <div class="contato">
+          <fieldset>
+            <legend>Informações de Contato</legend>
+            <label for='nome'>Nome</label>
+            <input type="text" id="nome" name='nome' placeholder="Informe seu nome" required />
+            <br/>
+            <label for='endereco'>Endereço</label>
+            <input type="text" id="endereco" name='endereco' placeholder="Informe seu endereço" required/>
+            <br/>
+            <label for='referencia'>Ponto de Referência</label>
+            <input type="text" id="referencia" name='referencia' placeholder="Informe um ponto de referência" />
+            <br/>
+            <label for='contato'>Contato</label>
+            <input type="text" id="contato" name='contato' placeholder="Informe seu contato" required/>
+            <br/>
+          </fieldset>
+        </div>
+        <input type='submit' id='submit' value='Enviar Pedido' />
+      </form>
+      <p id="mensagem"></p>
     </div>
   </div>
+      </div>
+    
 
-  <footer>
-    <a href="https://www.instagram.com/luis__fernando__santos?igsh=bjZjOXd4eHQxenVvq" target="_blank">© Developed by
-      Luis Fernando Santos</a>
-  </footer>
-  <script src="index.js"></script>
-  <script src="js/nav.js"></script>
-  <script type="text/javascript" src="js/geral.js"></script>
-  <script type="text/javascript" src="js/cart.js"></script>
+        <script src="js/dados.js"></script>
+        <script src="index.js"></script>
+        <script src="js/nav.js"></script>
+        <script type="text/javascript" src="js/geral.js"></script>
+        <script type="text/javascript" src="js/cart.js"></script>
 </body>
 
 </html>
