@@ -189,6 +189,9 @@ document.getElementById('contato').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
 
+
+
+
 // Função para enviar o pedido para o WhatsApp
 function enviarPedidoParaWhatsApp() {
     // Obter os valores dos campos do formulário
@@ -245,7 +248,7 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
     // Número do WhatsApp (substitua pelo número da sua empresa)
-    var numeroWhatsApp = "556181240738";
+    var numeroWhatsApp = "+5561981240738";
 
     // Codificar o texto da mensagem para que seja válido na URL
     var textoCodificado = encodeURIComponent(mensagem);
@@ -253,14 +256,8 @@ function enviarPedidoParaWhatsApp() {
     // Criar o link para o WhatsApp com o texto da mensagem
     var linkWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + textoCodificado;
 
-    // Limpar apenas os itens do carrinho (localStorage)
-    localStorage.removeItem("pizza_cart");
-
-    // Esperar 7 segundos antes de redirecionar para o WhatsApp
-    setTimeout(function() {
-        // Abrir o link no WhatsApp após 7 segundos
-        window.open(linkWhatsApp);
-    }, 7000);
+    // Abrir o link no WhatsApp
+    window.open(linkWhatsApp);
 }
 
 // Adicionar um evento de clique ao botão de enviar pedido
@@ -268,6 +265,3 @@ document.getElementById('submit').addEventListener('click', function(event) {
     event.preventDefault(); // Evitar o envio padrão do formulário
     enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
 });
-
-
-
