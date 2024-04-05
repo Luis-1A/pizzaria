@@ -105,7 +105,9 @@ body {
     flex-direction: row;
     margin: 25px 0
 }
-
+.container-area {
+    background: transparent; /* Removendo o fundo branco */
+}
 .models {
     display: none
 }
