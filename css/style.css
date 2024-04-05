@@ -960,47 +960,48 @@ form {
     max-width: 600px; /* Aumentando ainda mais a largura máxima */
     margin: 30px auto; /* Aumentando a margem externa */
     padding: 40px; /* Aumentando ainda mais o espaçamento interno */
-    background-color: #ffecd8; /* Laranja claro */
+    background: linear-gradient(to bottom, #ff6f61, #ffecd8); /* Degradê entre vermelho e laranja */
     border-radius: 10px; /* Aumentando o raio da borda */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Aumentando a intensidade da sombra */
+    display: none; /* Inicialmente oculta o formulário */
 }
 
 legend {
     font-size: 1.6em; /* Aumentando ainda mais o tamanho da fonte da legenda */
     font-weight: bold;
-    color: #ff6f61; /* Vermelho */
+    color: #fff; /* Texto branco */
 }
 
 label {
     display: block;
     margin-bottom: 12px; /* Aumentando um pouco mais a margem inferior */
-    color: #ff6f61; /* Vermelho */
+    color: #fff; /* Texto branco */
 }
 
 input[type="text"] {
     width: 100%;
     padding: 12px; /* Aumentando ainda mais o preenchimento */
     margin-bottom: 20px; /* Aumentando ainda mais a margem inferior */
-    border: 2px solid #ff6f61; /* Aumentando a espessura da borda */
+    border: 2px solid #fff; /* Bordas brancas */
     border-radius: 8px; /* Redefinindo o raio da borda */
 }
 
 input[type="submit"] {
     width: 100%;
     padding: 14px; /* Aumentando ainda mais o preenchimento */
-    background-color: #ff6f61; /* Vermelho */
-    color: #fff;
+    background: linear-gradient(to bottom, #ff6f61, #ffecd8); /* Degradê entre vermelho e laranja */
+    color: #fff; /* Texto branco */
     border: none;
     border-radius: 8px; /* Redefinindo o raio da borda */
     cursor: pointer;
 }
 
 input[type="submit"]:hover {
-    background-color: #e36054; /* Vermelho escuro */
+    background: linear-gradient(to bottom, #e36054, #ffd1bf); /* Degradê mais escuro em hover */
 }
 
 #mensagem {
     margin-top: 20px; /* Aumentando ainda mais a margem superior */
     font-size: 1.2em; /* Aumentando um pouco mais o tamanho da fonte */
-    color: #ff6f61; /* Vermelho */
+    color: #fff; /* Texto branco */
 }
