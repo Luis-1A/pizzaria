@@ -1,12 +1,15 @@
-
 document
     .querySelector(".pizzaInfo--addButton")
     .addEventListener("click", () => {
-        let size = 2; // Define o tamanho como grande
-        let identifier = pizzas[modalKey].id + "@" + size; // Concatena id da pizza e tamanho
-        let keyItem = cart.findIndex((item) => item.identifier == identifier); // Retorna
+        let size = parseInt(
+            document
+                .querySelector(".pizzaInfo--size.selected")
+                .getAttribute("data-key")
+        );
+        let identifier = pizzas[modalKey].id + "@" + size; //concatena id da pizza e tamanho
+        let keyItem = cart.findIndex((item) => item.identifier == identifier); //return
         if (keyItem > -1) {
-            cart[keyItem].qtd += modalQt; // Aumenta a qtd caso item já esteja no carrinho
+            cart[keyItem].qtd += modalQt; // aumenta a qtd caso item já esteja no cart
         } else {
             //## Adicionando objeto na variável "cart".
             cart.push({
@@ -23,15 +26,6 @@ document
         closeModal();
         saveCart();
     });
-
-// Definir preços apenas para o tamanho grande
-for (let i = 0; i < pizzas.length; i++) {
-    pizzas[i].price = { 2: pizzas[i].price[2] };
-}
-
-
-
-// Restante do código permanece igual
 
 //Salvar itens do carrinho no localStorage
 const saveCart = () => {
@@ -53,7 +47,7 @@ function updateCart() {
 
     if (cart.length > 0) {
         document.querySelector("aside").classList.add("show");
-        document.querySelector(".cart").innerHTML = ""; // Limpar carrinho
+        document.querySelector(".cart").innerHTML = ""; //Limpar carrinho
 
         let pizzasValor = 0;
         let subtotal = 0;
@@ -64,8 +58,18 @@ function updateCart() {
             let pizzaItem = pizzas.find((item) => item.id == cart[i].id);
             pizzasValor += cart[i].price * cart[i].qtd;
 
-            let pizzaSizeName = "G"; // Sempre grande
-
+            let pizzaSizeName;
+            switch (cart[i].size) {
+                case 0:
+                    pizzaSizeName = "P";
+                    break;
+                case 1:
+                    pizzaSizeName = "M";
+                    break;
+                case 2:
+                    pizzaSizeName = "G";
+                    break;
+            }
             let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
             let cartItem = document
                 .querySelector(".models .cart--item")
@@ -123,7 +127,7 @@ function updateCart() {
         })}`;
     } else {
         localStorage.clear();
-        document.querySelector("aside").classList.remove("show"); // Fechar carrinho
+        document.querySelector("aside").classList.remove("show"); //Closet cart
         document.querySelector("aside").style.left = "100vw";
     }
 }
@@ -148,9 +152,8 @@ document.querySelector(".cart--finalizar").addEventListener("click", () => {
         });
     }, 2100);
 });
-
 document.getElementById('orderForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evitar envio padrão do formulário
+    event.preventDefault(); // Evita o envio padrão do formulário
 
     // Obter os valores dos campos
     let nome = document.getElementById('nome').value;
@@ -169,8 +172,7 @@ document.getElementById('orderForm').addEventListener('submit', function (event)
 
     // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
 });
-
-// Adicionar um evento de clique aos campos do formulário para ocultar o carrinho
+// Adicione um evento de clique aos campos do formulário para ocultar o carrinho
 document.getElementById('nome').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
@@ -186,6 +188,9 @@ document.getElementById('referencia').addEventListener('focus', () => {
 document.getElementById('contato').addEventListener('focus', () => {
     document.querySelector("aside").classList.remove("show");
 });
+
+
+
 
 // Função para enviar o pedido para o WhatsApp
 function enviarPedidoParaWhatsApp() {
@@ -221,7 +226,18 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "Itens do Carrinho:\n";
     for (let i in cart) {
         let pizzaItem = pizzas.find((item) => item.id == cart[i].id);
-        let pizzaSizeName = "G"; // Sempre grande
+        let pizzaSizeName;
+        switch (cart[i].size) {
+            case 0:
+                pizzaSizeName = "P";
+                break;
+            case 1:
+                pizzaSizeName = "M";
+                break;
+            case 2:
+                pizzaSizeName = "G";
+                break;
+        }
         let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
         mensagem += `${pizzaName}, quantidade: ${cart[i].qtd}\n`; // Adiciona cada item do carrinho à mensagem
     }
@@ -246,6 +262,6 @@ function enviarPedidoParaWhatsApp() {
 
 // Adicionar um evento de clique ao botão de enviar pedido
 document.getElementById('submit').addEventListener('click', function(event) {
-    event.preventDefault(); // Evitar envio padrão do formulário
+    event.preventDefault(); // Evitar o envio padrão do formulário
     enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
 });
