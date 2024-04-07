@@ -267,23 +267,13 @@ document.getElementById('submit').addEventListener('click', function(event) {
 });
 
 
-// Função para limpar o carrinho
-function limparCarrinho() {
-  cart = []; // Limpa o carrinho
-  localStorage.removeItem('pizza_cart'); // Remove os itens do carrinho do localStorage
-  updateCart(); // Atualiza a exibição do carrinho
+// Função para limpar o carrinho quando o site é carregado
+function limparCarrinhoNoCarregamento() {
+  if (localStorage.getItem('pizza_cart')) {
+    limparCarrinho(); // Chama a função para limpar o carrinho
+    console.log("Carrinho limpo no carregamento do site.");
+  }
 }
 
-// Função para enviar o pedido para o WhatsApp
-function enviarPedidoParaWhatsApp() {
-    // Seu código existente para enviar o pedido para o WhatsApp...
-
-    // Após enviar o pedido, limpar o carrinho
-    limparCarrinho();
-}
-
-// Adicione um evento de clique ao botão de enviar pedido
-document.getElementById('submit').addEventListener('click', function(event) {
-    event.preventDefault(); // Evitar o envio padrão do formulário
-    enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
-});
+// Chama a função para limpar o carrinho quando o site é carregado
+limparCarrinhoNoCarregamento();
