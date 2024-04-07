@@ -12,8 +12,6 @@ const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiD
   .then(async (response) => await response.json())
   .then((data) => {
     pizzas = data;
-  
-
 
     updateCart();
 
@@ -28,7 +26,7 @@ const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiD
       pizzaItem.querySelector(".pizza-item--img img").src = item.img;
       pizzaItem.querySelector(
         ".pizza-item--price"
-      ).innerHTML = `${item.price[2].toLocaleString("pt-br", {
+      ).innerHTML = `${item.price[2].toLocaleString("pt-br", { // Preço do tamanho grande
         style: "currency",
         currency: "BRL",
       })}`;
@@ -48,7 +46,7 @@ const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiD
           pizzas[key].description;
         document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${pizzas[
           key
-        ].price[2].toLocaleString("pt-br", {
+        ].price[2].toLocaleString("pt-br", { // Preço do tamanho grande
           style: "currency",
           currency: "BRL",
         })}`;
@@ -62,7 +60,7 @@ const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiD
             if (sizeIndex == 2) {
               size.classList.add("selected");
             }
-            size.querySelector("span").innerHTML = pizzas[key].sizes[sizeIndex];
+            size.querySelector("span").innerHTML = "G"; // Tamanho fixo como grande
 
             size.addEventListener("click", () => {
               //Altera a cor do botão ao clicar
@@ -94,6 +92,23 @@ const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiD
       document.querySelector(".pizza-area").append(pizzaItem); //append() mantém o elemento e adiciona outro em seguida. appendChild() precisa de um elemento pai para inserir dentro
     });
   });
+
+// Restante do código permanece igual
+
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+// Restante do código permanece igual
+
 
 //##MODAL EVENTS
 function closeModal() {
