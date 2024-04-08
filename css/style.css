@@ -1,4 +1,5 @@
-@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap";
+
+@import"https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap";
 
 * {
     box-sizing: border-box;
@@ -15,6 +16,9 @@ body {
     margin: 0;
     min-height: 100vh;
 }
+
+
+
 
 .loader-content {
     position: fixed;
@@ -95,10 +99,10 @@ body {
     justify-content: center
 }
 
+
 .container-area {
     background: transparent; /* Removendo o fundo branco */
 }
-
 .models {
     display: none
 }
@@ -109,7 +113,7 @@ html {
 
 .header {
     height: 75px;
-    background: #ff6f61; /* Vermelho */
+    background: #fff;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -125,15 +129,14 @@ html {
     justify-content: space-between;
     align-items: center;
     width: 1300px;
-    background: #ff6f61; /* Vermelho */
+    background: #ff0f0f
 }
 
 .logo {
     display: block;
     height: 55px;
     font-size: 2rem;
-    font-weight: 600;
-    color: #fab427; /* Amarelo */
+    font-weight: 600
 }
 
 .logo img {
@@ -221,8 +224,7 @@ html {
     padding-bottom: 6px;
     display: block;
     font-size: .85rem;
-    font-weight: 500;
-    color: #fff; /* Branco */
+    font-weight: 500
 }
 
 .menu ul a::after {
@@ -835,258 +837,171 @@ footer a:hover::after {
 
     .menu-closer {
         display: block;
-        z-index: 999;
-        position: fixed;
-        top: 10px;
-        right: 10px
+        margin-bottom: 25px
     }
 
-    .menu-closer .fa-arrow-left {
-        font-size: 1.8rem
-    }
-
-    .menu--footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        border-top: 1px solid #ccc;
-        padding: 15px 0
-    }
-
-    .menu--footer button {
-        width: 100%;
-        background: #fab427;
-        color: #fff;
-        padding: 15px 0;
-        border: 0;
-        border-radius: 0;
-        cursor: pointer;
-        transition: all ease .2s
-    }
-
-    .menu--footer button:hover {
-        background: #e0a225
-    }
-
-    .menu--footer button:disabled {
-        background: #ddd;
-        color: #666;
-        cursor: not-allowed
-    }
-
-    .menu--footer button.success {
-        background: #48d05f
-    }
-
-    .menu--footer button.success:hover {
-        background: #35af4a
-    }
-
-    .display,
-    .container {
-        margin-top: 0px
-    }
-
-    .container-area {
-        padding: 0
+    .pizzaWindowArea {
+        justify-content: flex-start;
+        align-items: flex-start
     }
 
     .success {
-        padding: 25px
-    }
-
-    .success-img {
-        font-size: 4rem
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 25px 20px
     }
 
     .success .pedido-finalizado {
+        padding-top: 30px;
         flex-direction: column
     }
 
-    .pedido-finalizado span {
-        padding: 10px 0
-    }
-
-    .menu-openner {
-        margin-left: 20px
-    }
-
-    .container-menu-mobile {
-        display: flex
-    }
-
-    .menu_hamburger {
-        display: inline-flex
-    }
-
-    .menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 98;
-        display: flex;
-        justify-content: center;
-        width: 0px;
-        height: 100vh;
-        padding-top: 75px;
-        background: rgba(255, 255, 255, .888);
-        overflow-x: hidden;
-        overflow-y: auto;
-        transition: all ease .5s
-    }
-
-    .menu ul {
-        flex-direction: column;
-        padding-right: 40px
-    }
-
-    .menu li {
+    .success span {
         display: block;
-        padding: 8px;
-        text-align: center
+        font-size: 12px;
+        padding: 15px 0
     }
 
-    .menu-opened {
-        width: 200px !important
+    .success-img {
+        margin: 30px 20px 0;
+        line-height: 63px
     }
 
-    .menuMobile-area {
-        display: flex;
-        z-index: 99;
-        margin-right: 15px
-    }
-
-    aside {
-        width: auto;
-        position: fixed;
-        left: 100vw;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        transition: all ease .5s
-    }
-
-    aside.show {
-        width: auto;
+    .pizzaWindowBody {
+        width: 100vw;
+        display: block;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
         z-index: 99
     }
 
-    .cart--area {
-        width: 100vw
+    .pizzaWindowBody.modal {
+        padding: 25px 40px;
+        height: 100vh
     }
 
-    .cart--item--qtarea {
-        height: 45px
+    .pizzaBig img {
+        width: 60%;
+        height: auto
     }
 
-    .cart--item--qtarea button {
-        padding: 0px 18px
+    .pizzaInfo h1 {
+        margin-top: 5px;
+        font-size: 22px
     }
 
-    .cart--item--qt {
-        line-height: 45px;
+    .pizzaInfo .pizzaInfo--desc {
+        font-size: 12px
+    }
+
+    .pizzaInfo--sector {
+        font-size: 12px;
+        margin-top: 20px
+    }
+
+    .pizzaInfo--price {
+        justify-content: space-between
+    }
+
+    .pizzaInfo--price .pizzaInfo--actualPrice {
+        font-size: 22px
+    }
+
+    .pizzaInfo--size {
+        padding: 10px;
+        font-size: 12px
+    }
+
+    .pizzaInfo--size span {
+        font-size: 10px
+    }
+
+    .pizzaInfo--qtarea {
+        height: 40px
+    }
+
+    .pizzaInfo--qtarea button {
+        font-size: 23px;
+        padding: 0px 13px
+    }
+
+    .pizzaInfo--qt {
+        line-height: 40px;
         font-size: 15px
     }
 
-    .menu-closer {
+    .pizzaInfo--addButton {
+        font-size: 15px;
         display: block;
-        z-index: 999;
-        position: fixed;
-        top: 10px;
-        right: 10px
+        text-align: center;
+        margin: 18px auto;
+        padding: 15px 20px;
+        border-radius: 10px
     }
 
-    .menu-closer .fa-arrow-left {
-        font-size: 1.8rem
+    .pizzaInfo--cancelButton {
+        display: none
     }
 
-    .menu--footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background: #fff;
-        border-top: 1px solid #ccc;
-        padding: 15px 0
-    }
-
-    .menu--footer button {
-        width: 100%;
-        background: #fab427;
-        color: #fff;
-        padding: 15px 0;
-        border: 0;
-        border-radius: 0;
-        cursor: pointer;
-        transition: all ease .2s
-    }
-
-    .menu--footer button:hover {
-        background: #e0a225
-    }
-
-    .menu--footer button:disabled {
-        background: #ddd;
-        color: #666;
-        cursor: not-allowed
-    }
-
-    .menu--footer button.success {
-        background: #48d05f
-    }
-
-    .menu--footer button.success:hover {
-        background: #35af4a
-    }
-
-    .display,
-    .container {
-        margin-top: 0px
-    }
-
-    .container-area {
-        padding: 0
-    }
-
-    .success {
-        padding: 25px
-    }
-
-    .success-img {
-        font-size: 4rem
-    }
-
-    .success .pedido-finalizado {
-        flex-direction: column
-    }
-
-    .pedido-finalizado span {
-        padding: 10px 0
+    .pizzaInfo--cancelMobileButton {
+        display: block
     }
 }
+.pizzaInfo--size {
+      display: none;
+      }
+#submit {
+      display: none;
+}
+/* Estilo específico do formulário */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    background: linear-gradient(to bottom right, #ff6f61, #ffb347); /* Efeito degradê de vermelho para laranja */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
 
-@media(max-width: 550px) {
-    .container {
-        margin-top: 0px
-    }
+legend {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #fff; /* Texto em branco para contraste */
+}
 
-    .container-area {
-        padding: 0
-    }
+label {
+    display: block;
+    margin-bottom: 12px;
+    color: #fff; /* Texto em branco para contraste */
+}
 
-    .success {
-        padding: 25px
-    }
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #fff; /* Bordas brancas para contraste */
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco transparente */
+}
 
-    .success-img {
-        font-size: 4rem
-    }
+input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #fff;
+    color: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
-    .success .pedido-finalizado {
-        flex-direction: column
-    }
+input[type="submit"]:hover {
+    background-color: #e36054;
+}
 
-    .pedido-finalizado span {
-        padding: 10px 0
-    }
+#mensagem {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #fff; /* Texto em branco para contraste */
 }
