@@ -752,7 +752,7 @@ footer a:hover::after {
 
     .pizza-item {
         width: 280px;
-        background: #b92121;
+        background: linear-gradient(to right, red, orange);
         margin-top: 15px
     }
 
