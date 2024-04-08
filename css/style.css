@@ -651,7 +651,7 @@ h1 {
 .cart--totalitem {
     padding: 15px 0;
     border-top: 1px solid #ddd;
-    color: #999;
+    color: #000606;
     display: flex;
     justify-content: space-between;
     font-size: 15px
