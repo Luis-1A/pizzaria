@@ -489,13 +489,13 @@ h1 {
 
 .pizzaInfo .pizzaInfo--desc {
     font-size: 15px;
-    color: #999;
+    color: #000606;
     margin-top: 10px;
     width: 90%
 }
 
 .pizzaInfo--sector {
-    color: #ccc;
+    color: #000606;
     text-transform: uppercase;
     font-size: 14px;
     margin-top: 30px;
@@ -519,7 +519,7 @@ h1 {
 }
 
 .pizzaInfo--size:hover {
-    background-color: #ccc
+    background-color: #eee;
 }
 
 .pizzaInfo--size span {
