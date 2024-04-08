@@ -741,7 +741,7 @@ footer a:hover::after {
 
 @media(max-width: 820px) {
     body {
-        background: linear-gradient(to bottom, #FFA07A, #90EE90);
+        background: linear-gradient(to bottom, #FFD700, #FF6347, #228B22);
         flex-direction: column;
         justify-content: center
     }
