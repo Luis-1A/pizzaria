@@ -87,31 +87,5 @@
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, brócolis e milho"
     },
-      {
-        "id": 12,
-        "name": "Brigadeiro",
-        "img": "pizzafrango.jpg",
-        "price": [29.99, 29.99, 29.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Brigadeiro e granulado."
-    },
-      {
-        "id": 13,
-        "name": "Morango",
-        "img": "pizzafrango.jpg",
-        "price": [29.99, 29.99, 29.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Creme de avelã e morangos."
-          
-    },
-     {
-        "id": 14,
-        "name": "Morango",
-        "img": "pizzafrango.jpg",
-        "price": [29.99, 29.99, 29.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Creme de avelã e morangos."
-          
-    }
-    
+     
 ]
