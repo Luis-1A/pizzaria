@@ -402,7 +402,7 @@ h1 {
     border-radius: 50%;
     background: #fab427;
     text-align: center;
-    color: #de8181;
+    color: #ffffff;
     font-size: 22px;
     cursor: pointer;
     margin-top: -25px;
@@ -511,7 +511,7 @@ h1 {
 .pizzaInfo--size {
     padding: 10px 15px;
     color: #000;
-    background-color: #eee;
+    background-color: #c10505;
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
