@@ -58,7 +58,7 @@ body {
     height: 100%;
     width: 100%;
     border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, .3)
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
 }
 
 @keyframes ring {
@@ -412,7 +412,7 @@ h1 {
 
 .pizza-item--price {
     font-size: 15px;
-    color: #333;
+    color: #000606;
     margin-top: 5px
 }
 
@@ -420,14 +420,14 @@ h1 {
     width: 200px;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
+    color: #000606;
     margin: 5px 10px
 }
 
 .pizza-item--desc {
     width: 200px;
     font-size: .75rem;
-    color: #555;
+    color: #000606;
     padding: 10px 10px 20px
 }
 
