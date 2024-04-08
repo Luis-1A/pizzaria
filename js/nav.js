@@ -51,3 +51,13 @@ let openMenu = document.querySelector(".menu");
 toggleMenu.addEventListener("click", () => {
   openMenu.classList.toggle("menu-opened");
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const finalizarBtn = document.querySelector('.cart--finalizar');
+  finalizarBtn.addEventListener('click', function() {
+    const pizzaItems = document.querySelectorAll('.pizza-item');
+    pizzaItems.forEach(function(item) {
+      item.style.display = 'none';
+    });
+  });
+});
+
