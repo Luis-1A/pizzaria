@@ -765,9 +765,6 @@ footer a:hover::after {
         }
 
     }
-
-    flex-direction: column;
-    justify-content: center
 }
 
 .header {
@@ -970,7 +967,7 @@ aside.show {
 .pizzaInfo--cancelMobileButton {
     display: block
 }
-}
+
 
 .pizzaInfo--size {
     display: none;
