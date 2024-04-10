@@ -72,6 +72,22 @@
         "description": "Mussarela, parmessão e requeijão"
     },
     {
+        "id": 1,
+        "name": "Mussarela",
+        "img": "pizzamusssarela.jpg",
+        "price": [14.99, 14.99, 14.99],
+        "sizes": ["000g", "000g", "000g"],
+        "description": "musssrela e molho de tomate."
+    },
+    {
+        "id": 1,
+        "name": "Mussarela",
+        "img": "pizzamusssarela.jpg",
+        "price": [14.99, 14.99, 14.99],
+        "sizes": ["000g", "000g", "000g"],
+        "description": "musssrela e molho de tomate."
+    },
+    {
         "id": 10,
         "name": "Frango com Catupiry",
         "img": "pizzafrango.jpg",
