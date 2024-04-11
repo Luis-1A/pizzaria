@@ -26,8 +26,72 @@ let pizzas = [
         "sizes": ["320g", "530g", "860g"],
         "description": "mussarela, tomate e manjericão"
     },
-    // Adicione todas as outras pizzas aqui
+    {
+        "id": 4,
+        "name": "Portuguesa",
+        "img": "pizzaportuguesa.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela, ovos e azeitona"
+    },
+    {
+        "id": 5,
+        "name": "Bacon",
+        "img": "pizzabacon.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Bacon, cebola, ovos e mussarela"
+    },
+    {
+        "id": 6,
+        "name": "Calabresa",
+        "img": "pizzacalabresa.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa e cebola"
+    },
+    {
+        "id": 7,
+        "name": "Baiana",
+        "img": "pizzabaiana.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa, ovos, pimenta e mussarela"
+    },
+    {
+        "id": 8,
+        "name": "Moda da casa",
+        "img": "pizzamoda.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela e ovos"
+    },
+    {
+        "id": 9,
+        "name": "Três Queijos",
+        "img": "pizza3queijos.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, parmessão e requeijão"
+    },
+    {
+        "id": 10,
+        "name": "Frango com Catupiry",
+        "img": "pizzafrango.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, Frango e Catupiry."
+    },
+    {
+        "id": 11,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    },
 ];
+
 
 // Função para listar as pizzas na tela
 function listPizzas() {
