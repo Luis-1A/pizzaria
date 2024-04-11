@@ -191,14 +191,22 @@ document.getElementById('contato').addEventListener('focus', () => {
 
 
 
-
-// Função para enviar o pedido para o WhatsApp
 function enviarPedidoParaWhatsApp() {
     // Obter os valores dos campos do formulário
     let nome = document.getElementById('nome').value;
     let endereco = document.getElementById('endereco').value;
     let referencia = document.getElementById('referencia').value;
     let contato = document.getElementById('contato').value;
+
+    // Obter o método de pagamento selecionado
+    let metodoPagamento;
+    const pagamentoRadio = document.getElementsByName('pagamento');
+    for (let i = 0; i < pagamentoRadio.length; i++) {
+        if (pagamentoRadio[i].checked) {
+            metodoPagamento = pagamentoRadio[i].value;
+            break;
+        }
+    }
 
     // Calcular o valor total da compra
     let totalCompra = 0;
@@ -221,7 +229,8 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "- Nome: " + nome + "\n";
     mensagem += "- Endereço: " + endereco + "\n";
     mensagem += "- Referência: " + referencia + "\n";
-    mensagem += "- Contato: " + contato + "\n\n";
+    mensagem += "- Contato: " + contato + "\n";
+    mensagem += "- Método de Pagamento: " + metodoPagamento + "\n\n"; // Adiciona o método de pagamento à mensagem
 
     mensagem += "Itens do Carrinho:\n";
     for (let i in cart) {
@@ -238,8 +247,8 @@ function enviarPedidoParaWhatsApp() {
                 pizzaSizeName = "G";
                 break;
         }
-        let pizzaName = `${pizzaItem.name} (${pizzaSizeName})`;
-        mensagem += `${pizzaName}, quantidade: ${cart[i].qtd}\n`; // Adiciona cada item do carrinho à mensagem
+        let pizzaName = ${pizzaItem.name} (${pizzaSizeName});
+        mensagem += ${pizzaName}, quantidade: ${cart[i].qtd}\n; // Adiciona cada item do carrinho à mensagem
     }
 
     // Adicionar o subtotal, o valor da entrega e o valor final da compra à mensagem
