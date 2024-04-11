@@ -26,237 +26,162 @@ let pizzas = [
         "sizes": ["320g", "530g", "860g"],
         "description": "mussarela, tomate e manjericão"
     },
-    {
-        "id": 4,
-        "name": "Portuguesa",
-        "img": "pizzaportuguesa.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela, ovos e azeitona"
-    },
-    {
-        "id": 5,
-        "name": "Bacon",
-        "img": "pizzabacon.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Bacon, cebola, ovos e mussarela"
-    },
-    {
-        "id": 6,
-        "name": "Calabresa",
-        "img": "pizzacalabresa.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa e cebola"
-    },
-    {
-        "id": 7,
-        "name": "Baiana",
-        "img": "pizzabaiana.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa, ovos, pimenta e mussarela"
-    },
-    {
-        "id": 8,
-        "name": "Moda da casa",
-        "img": "pizzamoda.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela e ovos"
-    },
-    {
-        "id": 9,
-        "name": "Três Queijos",
-        "img": "pizza3queijos.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, parmessão e requeijão"
-    },
-    {
-        "id": 10,
-        "name": "Frango com Catupiry",
-        "img": "pizzafrango.jpg",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, Frango e Catupiry."
-    },
-    {
-        "id": 11,
-        "name": "Vegetariana",
-        "img": "pizzavegetariana.jpg",
-        "prices": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho"
-    },
-    {
-        "id": 12,
-        "name": "Vegetariana",
-        "img": "pizzavegetariana.jpg",
-        "prices": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho"
-    },
-    {
-        "id": 13,
-        "name": "Vegetariana",
-        "img": "pizzavegetariana.jpg",
-        "prices": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho"
-    },
-    {
-        "id": 14,
-        "name": "Vegetariana",
-        "img": "pizzavegetariana.jpg",
-        "prices": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho"
-    }
+    // Adicione todas as outras pizzas aqui
 ];
 
-const fetchData = async () => {
-  updateCart();
-  listPizzas();
-};
+// Função para listar as pizzas na tela
+function listPizzas() {
+    pizzas.forEach((item, index) => {
+        let pizzaItem = document.querySelector(".models .pizza-item").cloneNode(true);
+        pizzaItem.setAttribute("data-key", index);
 
-const listPizzas = () => {
-  const pizzaArea = document.querySelector(".pizza-area");
-  pizzaArea.innerHTML = ""; // Limpa a área de pizzas antes de listar novamente
-  let pizzaCount = 0;
+        pizzaItem.querySelector(".pizza-item--img img").src = item.img;
+        pizzaItem.querySelector(".pizza-item--price").innerHTML = `${item.price[2].toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
+        pizzaItem.querySelector(".pizza-item--name").innerHTML = item.name;
+        pizzaItem.querySelector(".pizza-item--desc").innerHTML = item.description;
 
-  pizzas.forEach((item, index) => {
-    if (pizzaCount >= 25) return; // Limita o número de pizzas a 25
-    let pizzaItem = createPizzaItem(item, index);
-    pizzaArea.appendChild(pizzaItem);
-    pizzaCount++;
-  });
-};
+        pizzaItem.querySelector("a").addEventListener("click", (e) => {
+            e.preventDefault();
+            let key = e.target.closest(".pizza-item").getAttribute("data-key");
+            modalQt = 1;
+            modalKey = key;
 
-const createPizzaItem = (item, index) => {
-  let pizzaItem = document.querySelector(".models .pizza-item").cloneNode(true);
-  pizzaItem.setAttribute("data-key", index);
+            document.querySelector(".pizzaBig img").src = pizzas[key].img;
+            document.querySelector(".pizzaInfo h1").innerHTML = pizzas[key].name;
+            document.querySelector(".pizzaInfo--desc").innerHTML = pizzas[key].description;
+            document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${pizzas[
+                key
+            ].price[2].toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+            })}`;
+            document.querySelector(".pizzaInfo--size.selected").classList.remove("selected");
+            document.querySelectorAll(".pizzaInfo--size").forEach((size, sizeIndex) => {
+                if (sizeIndex == 2) {
+                    size.classList.add("selected");
+                }
+                size.querySelector("span").innerHTML = pizzas[key].sizes[sizeIndex];
 
-  pizzaItem.querySelector(".pizza-item--img img").src = item.img;
-  pizzaItem.querySelector(".pizza-item--price").innerHTML = `${item.price[2].toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
-  pizzaItem.querySelector(".pizza-item--name").innerHTML = item.name;
-  pizzaItem.querySelector(".pizza-item--desc").innerHTML = item.description;
+                size.addEventListener("click", () => {
+                    document.querySelector(".pizzaInfo--size.selected").classList.remove("selected");
+                    size.classList.add("selected");
+                    modalQt = 1;
+                    document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
+                    document.querySelector(".pizzaInfo--actualPrice").innerHTML = ` ${pizzas[
+                        key
+                    ].price[sizeIndex].toLocaleString("pt-br", {
+                        style: "currency",
+                        currency: "BRL",
+                    })}`;
+                });
+            });
 
-  pizzaItem.querySelector("a").addEventListener("click", (e) => openPizzaModal(e, index));
+            document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
 
-  return pizzaItem;
-};
+            document.querySelector(".pizzaWindowArea").style.opacity = 0;
+            document.querySelector(".pizzaWindowArea").style.display = "flex";
+            setTimeout(() => {
+                document.querySelector(".pizzaWindowArea").style.opacity = 1;
+            }, 200);
+        });
 
-const openPizzaModal = (e, index) => {
-  e.preventDefault();
-  modalQt = 1;
-  modalKey = index;
+        document.querySelector(".pizza-area").append(pizzaItem);
+    });
+}
 
-  const pizza = pizzas[index];
+listPizzas(); // Chama a função para listar as pizzas na tela
 
-  document.querySelector(".pizzaBig img").src = pizza.img;
-  document.querySelector(".pizzaInfo h1").innerHTML = pizza.name;
-  document.querySelector(".pizzaInfo--desc").innerHTML = pizza.description;
-  document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${pizza.price[2].toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
+// Evento para fechar o modal
+function closeModal() {
+    document.querySelector(".pizzaWindowArea").style.opacity = 0;
+    setTimeout(() => {
+        document.querySelector(".pizzaWindowArea").style.display = "none";
+    }, 600);
+    window.scrollTo(0, 0);
+}
 
-  const sizes = document.querySelectorAll(".pizzaInfo--size");
-
-  sizes.forEach((size, sizeIndex) => {
-    size.querySelector("span").innerHTML = pizza.sizes[sizeIndex];
-    size.addEventListener("click", () => updatePizzaSize(size, sizeIndex));
-  });
-
-  document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
-  document.querySelector(".pizzaWindowArea").style.opacity = 0;
-  document.querySelector(".pizzaWindowArea").style.display = "flex";
-  setTimeout(() => {
-    document.querySelector(".pizzaWindowArea").style.opacity = 1;
-  }, 200);
-};
-
-const updatePizzaSize = (sizeElement, sizeIndex) => {
-  document.querySelector(".pizzaInfo--size.selected").classList.remove("selected");
-  sizeElement.classList.add("selected");
-
-  modalQt = 1;
-  document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
-  document.querySelector(".pizzaInfo--actualPrice").innerHTML = ` ${pizzas[modalKey].price[sizeIndex].toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
-};
-
-const closeModal = () => {
-  document.querySelector(".pizzaWindowArea").style.opacity = 0;
-  setTimeout(() => {
-    document.querySelector(".pizzaWindowArea").style.display = "none";
-  }, 600);
-  window.scrollTo(0, 0);
-};
-
+// Fechar modal com Esc
 document.addEventListener("keydown", (event) => {
-  const isEscKey = event.key === "Escape";
-  if (isEscKey && document.querySelector(".pizzaWindowArea").style.opacity === "1") {
-    closeModal();
-  }
+    const isEscKey = event.key === "Escape";
+
+    if (
+        (document.querySelector(".pizzaWindowArea").style.opacity = 1 && isEscKey)
+    ) {
+        closeModal();
+    }
 });
 
-document.querySelectorAll(".pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton").forEach((item) => {
-  item.addEventListener("click", closeModal);
+// Fechar modal com click no 'cancelar'
+document
+    .querySelectorAll(".pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton")
+    .forEach((item) => {
+        item.addEventListener("click", closeModal);
+    });
+
+// Controles para aumentar e diminuir quantidade de pizzas no modal
+document.querySelector(".pizzaInfo--qtmenos").addEventListener("click", () => {
+    if (modalQt > 1) {
+        let size = parseInt(
+            document
+                .querySelector(".pizzaInfo--size.selected")
+                .getAttribute("data-key")
+        );
+        let preco = pizzas[modalKey].price[size];
+        modalQt--;
+        document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
+        let updatePreco = preco * modalQt;
+        document.querySelector(
+            ".pizzaInfo--actualPrice"
+        ).innerHTML = `${updatePreco.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        })}`;
+    }
 });
 
-const decreaseQuantity = () => {
-  if (modalQt > 1) {
-    let size = parseInt(document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key"));
+document.querySelector(".pizzaInfo--qtmais").addEventListener("click", () => {
+    let size = parseInt(
+        document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key")
+    );
     let preco = pizzas[modalKey].price[size];
-    modalQt--;
+    modalQt++;
     document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
     let updatePreco = preco * modalQt;
-    document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${updatePreco.toLocaleString("pt-br", {
-      style: "currency",
-      currency: "BRL",
+    document.querySelector(
+        ".pizzaInfo--actualPrice"
+    ).innerHTML = `${updatePreco.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
     })}`;
-  }
-};
+});
 
-const increaseQuantity = () => {
-  let size = parseInt(document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key"));
-  let preco = pizzas[modalKey].price[size];
-  modalQt++;
-  document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
-  let updatePreco = preco * modalQt;
-  document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${updatePreco.toLocaleString("pt-br", {
-    style: "currency",
-    currency: "BRL",
-  })}`;
-};
+document.querySelectorAll(".pizzaInfo--size").forEach((size, sizeIndex) => {
+    size.addEventListener("click", (e) => {
+        document
+            .querySelector(".pizzaInfo--size.selected")
+            .classList.remove("selected"); // reset tamanho selecionado
+        size.classList.add("selected");
+    });
+});
 
-document.querySelector(".pizzaInfo--qtmenos").addEventListener("click", decreaseQuantity);
-document.querySelector(".pizzaInfo--qtmais").addEventListener("click", increaseQuantity);
-
+// Validação do formulário antes de enviar
 const form = document.getElementById('orderForm');
 const submitButton = document.getElementById('submit');
 const mensagem = document.getElementById('mensagem');
 
-form.addEventListener('input', function() {
-  const nome = document.getElementById('nome').value;
-  const endereco = document.getElementById('endereco').value;
-  const contato = document.getElementById('contato').value;
+form.addEventListener('input', function () {
+    const nome = document.getElementById('nome').value;
+    const endereco = document.getElementById('endereco').value;
+    const contato = document.getElementById('contato').value;
 
-  if (nome && endereco && contato) {
-    submitButton.style.display = 'block';
-    mensagem.textContent = '';
-  } else {
-    submitButton.style.display = 'none';
-    mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
-  }
+    if (nome && endereco && contato) {
+        submitButton.style.display = 'block';
+        mensagem.textContent = '';
+    } else {
+        submitButton.style.display = 'none';
+        mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
+    }
 });
-
-fetchData();
