@@ -8,162 +8,134 @@ localStorage.getItem("pizza_cart")
   ? (cart = JSON.parse(localStorage.getItem("pizza_cart")))
   : (cart = []);
 
-const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiData.json")
-  .then(async (response) => await response.json())
-  .then((data) => {
-    pizzas = data.slice(0, 25); // Modificação aqui para exibir no mínimo 25 pizzas
+const fetchData = async () => {
+  const response = await fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/daeb2d6be91472e992979c3e06bf6abb4a6c088a/apiData.json");
+  const data = await response.json();
+  pizzas = data;
+  updateCart();
+  listPizzas();
+};
 
-    updateCart();
+const listPizzas = () => {
+  const pizzaArea = document.querySelector(".pizza-area");
+  pizzaArea.innerHTML = ""; // Limpa a área de pizzas antes de listar novamente
+  let pizzaCount = 0;
 
-    //##LIST PIZZAS
-    pizzas.map((item, index) => {
-      //Mapear todos os objetos do JSON
-      let pizzaItem = document
-        .querySelector(".models .pizza-item")
-        .cloneNode(true); //cloneNode() = Clona o elemento selecionado com a qtd do JSON
-      pizzaItem.setAttribute("data-key", index); // colocando atributo e valor
+  pizzas.forEach((item, index) => {
+    if (pizzaCount >= 25) return; // Limita o número de pizzas a 25
+    let pizzaItem = createPizzaItem(item, index);
+    pizzaArea.appendChild(pizzaItem);
+    pizzaCount++;
+  });
+};
 
-      pizzaItem.querySelector(".pizza-item--img img").src = item.img;
-      pizzaItem.querySelector(
-        ".pizza-item--price"
-      ).innerHTML = `${item.price[2].toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      })}`;
-      pizzaItem.querySelector(".pizza-item--name").innerHTML = item.name;
-      pizzaItem.querySelector(".pizza-item--desc").innerHTML = item.description;
+const createPizzaItem = (item, index) => {
+  let pizzaItem = document.querySelector(".models .pizza-item").cloneNode(true);
+  pizzaItem.setAttribute("data-key", index);
 
-      //### MODAL
-      pizzaItem.querySelector("a").addEventListener("click", (e) => {
-        e.preventDefault(); //Previna a ação padrão.
-        let key = e.target.closest(".pizza-item").getAttribute("data-key"); //target.closest() procura elemento mais próximo que contenha... Quando clicar, PEGAR o atributo data-key
-        modalQt = 1; // reset quantidade de pizzas ao abrir modal
-        modalKey = key; // Diz qual a pizza aberta no modal
+  pizzaItem.querySelector(".pizza-item--img img").src = item.img;
+  pizzaItem.querySelector(".pizza-item--price").innerHTML = `${item.price[2].toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
+  pizzaItem.querySelector(".pizza-item--name").innerHTML = item.name;
+  pizzaItem.querySelector(".pizza-item--desc").innerHTML = item.description;
 
-        document.querySelector(".pizzaBig img").src = pizzas[key].img;
-        document.querySelector(".pizzaInfo h1").innerHTML = pizzas[key].name;
-        document.querySelector(".pizzaInfo--desc").innerHTML =
-          pizzas[key].description;
-        document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${pizzas[
-          key
-        ].price[2].toLocaleString("pt-br", {
-          style: "currency",
-          currency: "BRL",
-        })}`;
-        document
-          .querySelector(".pizzaInfo--size.selected")
-          .classList.remove("selected"); //reset no tamanho da pizza
-        document
-          .querySelectorAll(".pizzaInfo--size")
-          .forEach((size, sizeIndex) => {
-            //forEach() = Para cada;
-            if (sizeIndex == 2) {
-              size.classList.add("selected");
-            }
-            size.querySelector("span").innerHTML = pizzas[key].sizes[sizeIndex];
+  pizzaItem.querySelector("a").addEventListener("click", (e) => openPizzaModal(e, index));
 
-            size.addEventListener("click", () => {
-              //Altera a cor do botão ao clicar
-              document
-                .querySelector(".pizzaInfo--size.selected")
-                .classList.remove("selected");
-              size.classList.add("selected");
-              //Altera o valor conforme o tamanho + moeda REAL R$
-              modalQt = 1;
-              document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
-              document.querySelector(
-                ".pizzaInfo--actualPrice"
-              ).innerHTML = ` ${pizzas[key].price[sizeIndex].toLocaleString(
-                "pt-br",
-                { style: "currency", currency: "BRL" }
-              )}`;
-            });
-          });
+  return pizzaItem;
+};
 
-        document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
+const openPizzaModal = (e, index) => {
+  e.preventDefault();
+  modalQt = 1;
+  modalKey = index;
 
-        document.querySelector(".pizzaWindowArea").style.opacity = 0;
-        document.querySelector(".pizzaWindowArea").style.display = "flex";
-        setTimeout(() => {
-          document.querySelector(".pizzaWindowArea").style.opacity = 1;
-        }, 200);
-      });
+  const pizza = pizzas[index];
 
-      document.querySelector(".pizza-area").append(pizzaItem); //append() mantém o elemento e adiciona outro em seguida. appendChild() precisa de um elemento pai para inserir dentro
-    });
+  document.querySelector(".pizzaBig img").src = pizza.img;
+  document.querySelector(".pizzaInfo h1").innerHTML = pizza.name;
+  document.querySelector(".pizzaInfo--desc").innerHTML = pizza.description;
+  document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${pizza.price[2].toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
+
+  const sizes = document.querySelectorAll(".pizzaInfo--size");
+
+  sizes.forEach((size, sizeIndex) => {
+    size.querySelector("span").innerHTML = pizza.sizes[sizeIndex];
+    size.addEventListener("click", () => updatePizzaSize(size, sizeIndex));
   });
 
-//##MODAL EVENTS
-function closeModal() {
+  document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
+  document.querySelector(".pizzaWindowArea").style.opacity = 0;
+  document.querySelector(".pizzaWindowArea").style.display = "flex";
+  setTimeout(() => {
+    document.querySelector(".pizzaWindowArea").style.opacity = 1;
+  }, 200);
+};
+
+const updatePizzaSize = (sizeElement, sizeIndex) => {
+  document.querySelector(".pizzaInfo--size.selected").classList.remove("selected");
+  sizeElement.classList.add("selected");
+
+  modalQt = 1;
+  document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
+  document.querySelector(".pizzaInfo--actualPrice").innerHTML = ` ${pizzas[modalKey].price[sizeIndex].toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
+};
+
+const closeModal = () => {
   document.querySelector(".pizzaWindowArea").style.opacity = 0;
   setTimeout(() => {
     document.querySelector(".pizzaWindowArea").style.display = "none";
   }, 600);
   window.scrollTo(0, 0);
-}
-//Fechar modal com Esc
+};
+
 document.addEventListener("keydown", (event) => {
   const isEscKey = event.key === "Escape";
-
-  if (
-    (document.querySelector(".pizzaWindowArea").style.opacity = 1 && isEscKey)
-  ) {
+  if (isEscKey && document.querySelector(".pizzaWindowArea").style.opacity === "1") {
     closeModal();
   }
 });
-//Fechar modal com click no 'cancelar'
-document
-  .querySelectorAll(".pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton")
-  .forEach((item) => {
-    item.addEventListener("click", closeModal);
-  });
 
-//##CONTROLS
-document.querySelector(".pizzaInfo--qtmenos").addEventListener("click", () => {
+document.querySelectorAll(".pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton").forEach((item) => {
+  item.addEventListener("click", closeModal);
+});
+
+const decreaseQuantity = () => {
   if (modalQt > 1) {
-    let size = parseInt(
-      document
-        .querySelector(".pizzaInfo--size.selected")
-        .getAttribute("data-key")
-    );
+    let size = parseInt(document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key"));
     let preco = pizzas[modalKey].price[size];
     modalQt--;
     document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
     let updatePreco = preco * modalQt;
-    document.querySelector(
-      ".pizzaInfo--actualPrice"
-    ).innerHTML = `${updatePreco.toLocaleString("pt-br", {
+    document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${updatePreco.toLocaleString("pt-br", {
       style: "currency",
       currency: "BRL",
     })}`;
   }
-});
-document.querySelector(".pizzaInfo--qtmais").addEventListener("click", () => {
-  let size = parseInt(
-    document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key")
-  );
+};
+
+const increaseQuantity = () => {
+  let size = parseInt(document.querySelector(".pizzaInfo--size.selected").getAttribute("data-key"));
   let preco = pizzas[modalKey].price[size];
   modalQt++;
   document.querySelector(".pizzaInfo--qt").innerHTML = modalQt;
   let updatePreco = preco * modalQt;
-  document.querySelector(
-    ".pizzaInfo--actualPrice"
-  ).innerHTML = `${updatePreco.toLocaleString("pt-br", {
+  document.querySelector(".pizzaInfo--actualPrice").innerHTML = `${updatePreco.toLocaleString("pt-br", {
     style: "currency",
     currency: "BRL",
   })}`;
-});
+};
 
-document.querySelectorAll(".pizzaInfo--size").forEach((size, sizeIndex) => {
-  size.addEventListener("click", (e) => {
-    document
-      .querySelector(".pizzaInfo--size.selected")
-      .classList.remove("selected"); // reset tamanho selecionado
-    size.classList.add("selected");
-  });
-});
+document.querySelector(".pizzaInfo--qtmenos").addEventListener("click", decreaseQuantity);
+document.querySelector(".pizzaInfo--qtmais").addEventListener("click", increaseQuantity);
 
-// Validar formulário antes de enviar
 const form = document.getElementById('orderForm');
 const submitButton = document.getElementById('submit');
 const mensagem = document.getElementById('mensagem');
@@ -181,3 +153,5 @@ form.addEventListener('input', function() {
     mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
   }
 });
+
+fetchData();
