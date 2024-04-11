@@ -11,14 +11,12 @@ localStorage.getItem("pizza_cart")
 const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/daeb2d6be91472e992979c3e06bf6abb4a6c088a/apiData.json")
   .then(async (response) => await response.json())
   .then((data) => {
-    pizzas = data;
-  
-
+    pizzas = data.slice(0, 25); // Modificação aqui para exibir no mínimo 25 pizzas
 
     updateCart();
 
     //##LIST PIZZAS
-    data.map((item, index) => {
+    pizzas.map((item, index) => {
       //Mapear todos os objetos do JSON
       let pizzaItem = document
         .querySelector(".models .pizza-item")
@@ -165,22 +163,21 @@ document.querySelectorAll(".pizzaInfo--size").forEach((size, sizeIndex) => {
   });
 });
 
- 
-// ttttttffgghjjnj
+// Validar formulário antes de enviar
 const form = document.getElementById('orderForm');
-  const submitButton = document.getElementById('submit');
-  const mensagem = document.getElementById('mensagem');
+const submitButton = document.getElementById('submit');
+const mensagem = document.getElementById('mensagem');
 
-  form.addEventListener('input', function() {
-    const nome = document.getElementById('nome').value;
-    const endereco = document.getElementById('endereco').value;
-    const contato = document.getElementById('contato').value;
+form.addEventListener('input', function() {
+  const nome = document.getElementById('nome').value;
+  const endereco = document.getElementById('endereco').value;
+  const contato = document.getElementById('contato').value;
 
-    if (nome && endereco && contato) {
-      submitButton.style.display = 'block';
-      mensagem.textContent = '';
-    } else {
-      submitButton.style.display = 'none';
-      mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
-    }
-  });
+  if (nome && endereco && contato) {
+    submitButton.style.display = 'block';
+    mensagem.textContent = '';
+  } else {
+    submitButton.style.display = 'none';
+    mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
+  }
+});
