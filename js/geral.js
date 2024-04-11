@@ -1,17 +1,122 @@
 let cart = [];
 let modalQt = 1;
 let modalKey = 0;
-let pizzas;
-
-// GET CART BY SESSION STORAGE
-localStorage.getItem("pizza_cart")
-  ? (cart = JSON.parse(localStorage.getItem("pizza_cart")))
-  : (cart = []);
+let pizzas = [
+    {
+        "id": 1,
+        "name": "Mussarela",
+        "img": "pizzamusssarela.jpg",
+        "price": [14.99, 14.99, 14.99],
+        "sizes": ["000g", "000g", "000g"],
+        "description": "musssrela e molho de tomate."
+    },
+    {
+        "id": 2,
+        "name": "Alho e Óleo",
+        "img": "pizzaalhoeoleo.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "mussarela, alho e óleo"
+    },
+    {
+        "id": 3,
+        "name": "Marguerita",
+        "img": "pizzamarguerita.png",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "mussarela, tomate e manjericão"
+    },
+    {
+        "id": 4,
+        "name": "Portuguesa",
+        "img": "pizzaportuguesa.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela, ovos e azeitona"
+    },
+    {
+        "id": 5,
+        "name": "Bacon",
+        "img": "pizzabacon.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Bacon, cebola, ovos e mussarela"
+    },
+    {
+        "id": 6,
+        "name": "Calabresa",
+        "img": "pizzacalabresa.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa e cebola"
+    },
+    {
+        "id": 7,
+        "name": "Baiana",
+        "img": "pizzabaiana.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Calabresa, ovos, pimenta e mussarela"
+    },
+    {
+        "id": 8,
+        "name": "Moda da casa",
+        "img": "pizzamoda.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Presunto, mussarela e ovos"
+    },
+    {
+        "id": 9,
+        "name": "Três Queijos",
+        "img": "pizza3queijos.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, parmessão e requeijão"
+    },
+    {
+        "id": 10,
+        "name": "Frango com Catupiry",
+        "img": "pizzafrango.jpg",
+        "price": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, Frango e Catupiry."
+    },
+    {
+        "id": 11,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    },
+    {
+        "id": 12,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    },
+    {
+        "id": 13,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    },
+    {
+        "id": 14,
+        "name": "Vegetariana",
+        "img": "pizzavegetariana.jpg",
+        "prices": [24.99, 24.99, 24.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela, brócolis e milho"
+    }
+];
 
 const fetchData = async () => {
-  const response = await fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/daeb2d6be91472e992979c3e06bf6abb4a6c088a/apiData.json");
-  const data = await response.json();
-  pizzas = data;
   updateCart();
   listPizzas();
 };
