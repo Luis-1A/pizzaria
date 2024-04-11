@@ -11,7 +11,7 @@ localStorage.getItem("pizza_cart")
 const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/daeb2d6be91472e992979c3e06bf6abb4a6c088a/apiData.json")
   .then(async (response) => await response.json())
   .then((data) => {
-    pizzas = data.slice(0, 25); // Modificação aqui para exibir no mínimo 25 pizzas
+    pizzas = data;
 
     updateCart();
 
@@ -181,3 +181,4 @@ form.addEventListener('input', function() {
     mensagem.textContent = 'Por favor, preencha todos os campos antes de enviar o pedido.';
   }
 });
+item.name
