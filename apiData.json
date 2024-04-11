@@ -1,11 +1,11 @@
 [
-{
-    "id": 1,
+    {
+        "id": 1,
         "name": "Mussarela",
-        "img": "pizzamusssarela.jpg",
+        "img": "pizzamussarela.jpg",
         "price": [14.99, 14.99, 14.99],
-        "sizes": ["000g", "000g", "000g"],
-        "description": "musssrela e molho de tomate."
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Mussarela e molho de tomate."
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "img": "pizzaalhoeoleo.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "mussarela, alho e óleo"
+        "description": "Mussarela, alho e óleo."
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "img": "pizzamarguerita.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "mussarela, tomate e manjericão"
+        "description": "Mussarela, tomate e manjericão."
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "img": "pizzaportuguesa.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela, ovos e azeitona"
+        "description": "Presunto, mussarela, ovos e azeitona."
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "img": "pizzabacon.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Bacon, cebola, ovos e mussarela"
+        "description": "Bacon, cebola, ovos e mussarela."
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "img": "pizzacalabresa.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa e cebola"
+        "description": "Calabresa e cebola."
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "img": "pizzabaiana.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa, ovos, pimenta e mussarela"
+        "description": "Calabresa, ovos, pimenta e mussarela."
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "img": "pizzamoda.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela e ovos"
+        "description": "Presunto, mussarela e ovos."
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "img": "pizza3queijos.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, parmessão e requeijão"
+        "description": "Mussarela, parmesão e requeijão."
     },
     {
         "id": 10,
@@ -77,74 +77,70 @@
         "img": "pizzafrango.jpg",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, Frango e Catupiry."
+        "description": "Mussarela, frango e Catupiry."
     },
     {
         "id": 11,
         "name": "Vegetariana",
         "img": "pizzavegetariana.jpg",
-        "prices": [24.99, 24.99, 24.99],
+        "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho"
-
+        "description": "Mussarela, brócolis e milho."
     },
-
-{
-    "id": 12,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-},
-{
-    "id": 13,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-},
-{
-    "id": 14,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-},
-{
-    "id": 15,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-},
-{
-    "id": 16,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g",
-    "description": "Descrição indisponível"
-},
-{
-    "id": 17,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": ["320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-},
-{
-    "id": 18,
-    "name": "Pizza sem nome",
-    "img": "pizzanomedesconhecido.jpg",
-    "price": [29.99, 29.99, 29.99],
-    "sizes": "320g", "530g", "860g"],
-    "description": "Descrição indisponível"
-}
-
-
+    {
+        "id": 12,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 13,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 14,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 15,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 16,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 17,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    },
+    {
+        "id": 18,
+        "name": "Pizza sem nome",
+        "img": "pizzanomedesconhecido.jpg",
+        "price": [29.99, 29.99, 29.99],
+        "sizes": ["320g", "530g", "860g"],
+        "description": "Descrição indisponível."
+    }
 ]
