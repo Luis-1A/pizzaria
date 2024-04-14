@@ -277,27 +277,3 @@ function limparCarrinhoNoCarregamento() {
 
 // Chama a função para limpar o carrinho quando o site é carregado
 limparCarrinhoNoCarregamento();
-// Adicione um evento de mudança aos campos de pagamento para mostrar ou ocultar os campos de troco e nota
-let formaPagamentoRadios = document.querySelectorAll('input[name="pagamento"]');
-formaPagamentoRadios.forEach(radio => {
-    radio.addEventListener('change', function() {
-        let formaPagamento = this.value;
-        if (formaPagamento === 'dinheiro') {
-            document.getElementById('troco').style.display = 'block';
-        } else {
-            document.getElementById('troco').style.display = 'none';
-            document.getElementById('nota').value = ''; // Limpar o campo de nota se não for pagamento em dinheiro
-        }
-    });
-});
-
-// Adicione um evento de mudança ao campo de precisão de troco para mostrar ou ocultar o campo de nota
-document.getElementById('precisaTroco').addEventListener('change', function() {
-    let precisaTroco = this.value;
-    if (precisaTroco === 'sim') {
-        document.getElementById('notaDinheiro').style.display = 'block';
-    } else {
-        document.getElementById('notaDinheiro').style.display = 'none';
-        document.getElementById('nota').value = ''; // Limpar o campo de nota se não precisa de troco
-    }
-});
