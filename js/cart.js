@@ -193,76 +193,37 @@ document.getElementById('contato').addEventListener('focus', () => {
 
 
 // Função para enviar o pedido para o WhatsApp
-document.getElementById('orderForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Evita o envio padrão do formulário
-
-    // Obter os valores dos campos
+function enviarPedidoParaWhatsApp() {
+    // Obter os valores dos campos do formulário
     let nome = document.getElementById('nome').value;
     let endereco = document.getElementById('endereco').value;
     let referencia = document.getElementById('referencia').value;
     let contato = document.getElementById('contato').value;
-    let pagamento = document.querySelector('input[name="pagamento"]:checked').value;
 
-    // Se o pagamento for em dinheiro e precisar de troco, obter a nota
-    let troco = null;
-    if (pagamento === 'dinheiro') {
-        let precisaTroco = document.getElementById('precisaTroco').value;
-        if (precisaTroco === 'sim') {
-            let nota = document.getElementById('nota').value;
-            troco = {
-                precisaTroco: precisaTroco,
-                nota: nota
-            };
-        }
-    }
-
-    // Armazenar as informações do pedido no carrinho
-    let orderInfo = {
-        nome: nome,
-        endereco: endereco,
-        referencia: referencia,
-        contato: contato,
-        pagamento: pagamento,
-        troco: troco // Se necessário, inclui informações sobre o troco
-    };
-    localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
-
-    // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
-
-    // Limpar o formulário após enviar o pedido
-    this.reset();
-});
-
-// Função para enviar o pedido para o WhatsApp
-function enviarPedidoParaWhatsApp() {
-    // Obter as informações do pedido armazenadas no carrinho
-    let orderInfo = JSON.parse(localStorage.getItem('orderInfo'));
-
-    // Calcular o valor total da compra e incluir no pedido
+    // Calcular o valor total da compra
     let totalCompra = 0;
     for (let i in cart) {
         totalCompra += cart[i].price * cart[i].qtd;
     }
-    orderInfo.totalCompra = totalCompra;
 
-    // Montar a mensagem com todas as informações do pedido
+    // Calcular o subtotal da compra
+    let subtotalCompra = totalCompra;
+
+    // Valor da entrega (substitua pelo valor da entrega conforme necessário)
+    let valorEntrega = 0.00;
+
+    // Calcular o valor total da compra incluindo a entrega
+    let valorFinal = subtotalCompra + valorEntrega;
+
+    // Montar a mensagem com todas as informações
     let mensagem = "Pedido:\n\n";
     mensagem += "Informações do Cliente:\n";
-    mensagem += "- Nome: " + orderInfo.nome + "\n";
-    mensagem += "- Endereço: " + orderInfo.endereco + "\n";
-    mensagem += "- Referência: " + orderInfo.referencia + "\n";
-    mensagem += "- Contato: " + orderInfo.contato + "\n\n";
-    mensagem += "Método de Pagamento: " + orderInfo.pagamento + "\n";
+    mensagem += "- Nome: " + nome + "\n";
+    mensagem += "- Endereço: " + endereco + "\n";
+    mensagem += "- Referência: " + referencia + "\n";
+    mensagem += "- Contato: " + contato + "\n\n";
 
-    // Se o pagamento for em dinheiro e precisar de troco, incluir informações sobre o troco na mensagem
-    if (orderInfo.pagamento === 'dinheiro' && orderInfo.troco) {
-        mensagem += "Precisa de Troco: " + orderInfo.troco.precisaTroco + "\n";
-        if (orderInfo.troco.nota) {
-            mensagem += "Nota: " + orderInfo.troco.nota + "\n";
-        }
-    }
-
-    mensagem += "\nItens do Carrinho:\n";
+    mensagem += "Itens do Carrinho:\n";
     for (let i in cart) {
         let pizzaItem = pizzas.find((item) => item.id == cart[i].id);
         let pizzaSizeName;
@@ -281,8 +242,10 @@ function enviarPedidoParaWhatsApp() {
         mensagem += `${pizzaName}, quantidade: ${cart[i].qtd}\n`; // Adiciona cada item do carrinho à mensagem
     }
 
-    // Adicionar o subtotal e o valor total da compra à mensagem
-    mensagem += "\nSubtotal: " + orderInfo.totalCompra.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    // Adicionar o subtotal, o valor da entrega e o valor final da compra à mensagem
+    mensagem += "\nSubtotal: " + subtotalCompra.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
+    mensagem += "Valor da Entrega: " + valorEntrega.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
+    mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
     // Número do WhatsApp (substitua pelo número da sua empresa)
     var numeroWhatsApp = "+5561981240738";
@@ -301,4 +264,40 @@ function enviarPedidoParaWhatsApp() {
 document.getElementById('submit').addEventListener('click', function(event) {
     event.preventDefault(); // Evitar o envio padrão do formulário
     enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
+});
+
+
+// Função para limpar o carrinho quando o site é carregado
+function limparCarrinhoNoCarregamento() {
+  if (localStorage.getItem('pizza_cart')) {
+    limparCarrinho(); // Chama a função para limpar o carrinho
+    console.log("Carrinho limpo no carregamento do site.");
+  }
+}
+
+// Chama a função para limpar o carrinho quando o site é carregado
+limparCarrinhoNoCarregamento();
+// Adicione um evento de mudança aos campos de pagamento para mostrar ou ocultar os campos de troco e nota
+let formaPagamentoRadios = document.querySelectorAll('input[name="pagamento"]');
+formaPagamentoRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+        let formaPagamento = this.value;
+        if (formaPagamento === 'dinheiro') {
+            document.getElementById('troco').style.display = 'block';
+        } else {
+            document.getElementById('troco').style.display = 'none';
+            document.getElementById('nota').value = ''; // Limpar o campo de nota se não for pagamento em dinheiro
+        }
+    });
+});
+
+// Adicione um evento de mudança ao campo de precisão de troco para mostrar ou ocultar o campo de nota
+document.getElementById('precisaTroco').addEventListener('change', function() {
+    let precisaTroco = this.value;
+    if (precisaTroco === 'sim') {
+        document.getElementById('notaDinheiro').style.display = 'block';
+    } else {
+        document.getElementById('notaDinheiro').style.display = 'none';
+        document.getElementById('nota').value = ''; // Limpar o campo de nota se não precisa de troco
+    }
 });
