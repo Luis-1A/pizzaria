@@ -980,8 +980,7 @@ aside.show {
     display: none;
 }
 
-/* Estilo específico do formulário */
-form {
+/* Estilo específico do formulário */form {
     max-width: 600px;
     margin: 30px auto;
     padding: 40px;
@@ -1005,7 +1004,7 @@ label {
     /* Texto em branco para contraste */
 }
 
-input[type="text"] {
+input[type="text"], select {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
