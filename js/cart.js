@@ -160,45 +160,40 @@ document.getElementById('orderForm').addEventListener('submit', function (event)
     let endereco = document.getElementById('endereco').value;
     let referencia = document.getElementById('referencia').value;
     let contato = document.getElementById('contato').value;
-
+    let metodoPagamento = document.getElementById('metodoPagamento').value;
+    let precisaTroco = document.getElementById('troco').value;
+    let valorTroco = document.getElementById('valorTroco').value;
 
     let orderInfo = {
         nome: nome,
         endereco: endereco,
         referencia: referencia,
-        contato: contato
+        contato: contato,
+        metodoPagamento: metodoPagamento
     };
+
+    if (metodoPagamento === 'dinheiro' && precisaTroco === 'sim') {
+        orderInfo.precisaTroco = true;
+        orderInfo.valorTroco = parseFloat(valorTroco);
+    }
+
     localStorage.setItem('orderInfo', JSON.stringify(orderInfo));
 
-    // Lógica adicional, como enviar os dados para o servidor, etc. falta fazer
-});
-// Adicione um evento de clique aos campos do formulário para ocultar o carrinho
-document.getElementById('nome').addEventListener('focus', () => {
-    document.querySelector("aside").classList.remove("show");
+    // Lógica adicional, como enviar os dados para o servidor, etc.
 });
 
-document.getElementById('endereco').addEventListener('focus', () => {
-    document.querySelector("aside").classList.remove("show");
+document.getElementById('submit').addEventListener('click', function(event) {
+    event.preventDefault(); // Evitar o envio padrão do formulário
+    enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
 });
 
-document.getElementById('referencia').addEventListener('focus', () => {
-    document.querySelector("aside").classList.remove("show");
-});
-
-document.getElementById('contato').addEventListener('focus', () => {
-    document.querySelector("aside").classList.remove("show");
-});
-
-
-
-
-// Função para enviar o pedido para o WhatsApp
 function enviarPedidoParaWhatsApp() {
     // Obter os valores dos campos do formulário
     let nome = document.getElementById('nome').value;
     let endereco = document.getElementById('endereco').value;
     let referencia = document.getElementById('referencia').value;
     let contato = document.getElementById('contato').value;
+    let metodoPagamento = document.getElementById('metodoPagamento').value;
 
     // Calcular o valor total da compra
     let totalCompra = 0;
@@ -215,13 +210,14 @@ function enviarPedidoParaWhatsApp() {
     // Calcular o valor total da compra incluindo a entrega
     let valorFinal = subtotalCompra + valorEntrega;
 
-    // Montar a mensagem com todas as informações
+    // Montar a mensagem com todas as informações, incluindo o método de pagamento
     let mensagem = "Pedido:\n\n";
     mensagem += "Informações do Cliente:\n";
     mensagem += "- Nome: " + nome + "\n";
     mensagem += "- Endereço: " + endereco + "\n";
     mensagem += "- Referência: " + referencia + "\n";
-    mensagem += "- Contato: " + contato + "\n\n";
+    mensagem += "- Contato: " + contato + "\n";
+    mensagem += "Método de Pagamento: " + metodoPagamento + "\n\n";
 
     mensagem += "Itens do Carrinho:\n";
     for (let i in cart) {
@@ -246,34 +242,28 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "\nSubtotal: " + subtotalCompra.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
     mensagem += "Valor da Entrega: " + valorEntrega.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) + "\n";
     mensagem += "Valor Total da Compra: " + valorFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-
+    
     // Número do WhatsApp (substitua pelo número da sua empresa)
     var numeroWhatsApp = "+5561981240738";
-
+    
     // Codificar o texto da mensagem para que seja válido na URL
     var textoCodificado = encodeURIComponent(mensagem);
-
+    
     // Criar o link para o WhatsApp com o texto da mensagem
     var linkWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + textoCodificado;
-
+    
     // Abrir o link no WhatsApp
     window.open(linkWhatsApp);
-}
-
-// Adicionar um evento de clique ao botão de enviar pedido
-document.getElementById('submit').addEventListener('click', function(event) {
-    event.preventDefault(); // Evitar o envio padrão do formulário
-    enviarPedidoParaWhatsApp(); // Chamar a função para enviar o pedido para o WhatsApp
-});
-
-
-// Função para limpar o carrinho quando o site é carregado
-function limparCarrinhoNoCarregamento() {
-  if (localStorage.getItem('pizza_cart')) {
-    limparCarrinho(); // Chama a função para limpar o carrinho
-    console.log("Carrinho limpo no carregamento do site.");
-  }
-}
-
-// Chama a função para limpar o carrinho quando o site é carregado
-limparCarrinhoNoCarregamento();
+    }
+    
+    // Função para limpar o carrinho quando o site é carregado
+    function limparCarrinhoNoCarregamento() {
+      if (localStorage.getItem('pizza_cart')) {
+        limparCarrinho(); // Chama a função para limpar o carrinho
+        console.log("Carrinho limpo no carregamento do site.");
+      }
+    }
+    
+    // Chama a função para limpar o carrinho quando o site é carregado
+    limparCarrinhoNoCarregamento();
+    
