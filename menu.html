@@ -138,12 +138,31 @@
                   <br />
                   <label for='contato'>Contato</label>
                   <input type="text" id="contato" name='contato' placeholder="Informe seu contato" required />
-                  <br />               
-                 </fieldset>
+                  <br />
+                  <label for="metodoPagamento">Método de Pagamento</label>
+                  <select id="metodoPagamento" name="metodoPagamento" required>
+                    <option value="">Selecione o método de pagamento</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="cartao">Cartão</option>
+                    <option value="pix">PIX</option>
+                  </select>
+                  <br />
+                  <div id="trocoSection" style="display: none;">
+                    <label for="troco">Precisa de troco?</label>
+                    <select id="troco" name="troco">
+                      <option value="nao">Não</option>
+                      <option value="sim">Sim</option>
+                    </select>
+                    <br />
+                    <div id="valorTrocoSection" style="display: none;">
+                      <label for="valorTroco">Valor da Cédula</label>
+                      <input type="number" id="valorTroco" name="valorTroco" placeholder="Informe o valor da cédula" />
+                    </div>
+                  </div>
+                </fieldset>
               </div>
-              <input type='submit' id='submit' value='Continua pedido pelo WhatsApp' />
+              <input type='submit' id='submit' value='Continuar pedido pelo WhatsApp' />
             </form>
-
           </div>
         </div>
       </div>
