@@ -8,19 +8,10 @@ localStorage.getItem("pizza_cart")
   ? (cart = JSON.parse(localStorage.getItem("pizza_cart")))
   : (cart = []);
 
-  document.getElementById('primeiroBotao').addEventListener('click', function() {
-    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/apiData.json';
-  });
-  
-  // Adicionar evento de clique para o segundo botão
-  document.getElementById('segundoBotao').addEventListener('click', function() {
-    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/pizzas2.json';
-  });
-  
-  // Adicionar evento de clique para o terceiro botão
-  document.getElementById('terceiroBotao').addEventListener('click', function() {
-    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/pizzas3.json';
-  });
+const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiData.json")
+  .then(async (response) => await response.json())
+  .then((data) => {
+    pizzas = data;
   
 
 
