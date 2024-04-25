@@ -8,10 +8,19 @@ localStorage.getItem("pizza_cart")
   ? (cart = JSON.parse(localStorage.getItem("pizza_cart")))
   : (cart = []);
 
-const api = fetch("https://raw.githubusercontent.com/feito-pelo/Teste-/main/apiData.json")
-  .then(async (response) => await response.json())
-  .then((data) => {
-    pizzas = data;
+  document.getElementById('primeiroBotao').addEventListener('click', function() {
+    window.location.href = 'https://seu-link-para-pizzas-1.com';
+  });
+  
+  // Adicionar evento de clique para o segundo botão
+  document.getElementById('segundoBotao').addEventListener('click', function() {
+    window.location.href = 'https://seu-link-para-pizzas-2.com';
+  });
+  
+  // Adicionar evento de clique para o terceiro botão
+  document.getElementById('terceiroBotao').addEventListener('click', function() {
+    window.location.href = 'https://seu-link-para-pizzas-3.com';
+  });
   
 
 
