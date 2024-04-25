@@ -9,17 +9,17 @@ localStorage.getItem("pizza_cart")
   : (cart = []);
 
   document.getElementById('primeiroBotao').addEventListener('click', function() {
-    window.location.href = 'https://seu-link-para-pizzas-1.com';
+    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/apiData.json';
   });
   
   // Adicionar evento de clique para o segundo botão
   document.getElementById('segundoBotao').addEventListener('click', function() {
-    window.location.href = 'https://seu-link-para-pizzas-2.com';
+    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/pizzas2.json';
   });
   
   // Adicionar evento de clique para o terceiro botão
   document.getElementById('terceiroBotao').addEventListener('click', function() {
-    window.location.href = 'https://seu-link-para-pizzas-3.com';
+    window.location.href = 'https://raw.githubusercontent.com/feito-pelo/pizzaria/main/pizzas3.json';
   });
   
 
