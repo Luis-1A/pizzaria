@@ -50,7 +50,7 @@
     {
         "id": 7,
         "name": "Baiana",
-        "img": "baiana.jpg",
+        "img": "baiana.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Calabresa, ovos, pimenta e mussarela."
