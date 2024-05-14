@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Mussarela",
-        "img": "mussarela.png",
+        "img": "img/mussarela.png",
         "price": [19.99, 19.99, 19.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela e molho de tomate."
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Alho e Óleo",
-        "img": "alho-e-oleo.png",
+        "img": "img/alho-e-oleo.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, alho e óleo."
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Marguerita",
-        "img": "marguerita.png",
+        "img": "img/marguerita.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, tomate e manjericão."
@@ -26,7 +26,7 @@
     {
         "id": 4,
         "name": "Portuguesa",
-        "img": "portuguesa.png",
+        "img": "img/portuguesa.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Presunto, mussarela, ovos e azeitona."
@@ -34,7 +34,7 @@
     {
         "id": 5,
         "name": "Bacon",
-        "img": "bacon.png",
+        "img": "img/bacon.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Bacon, cebola, ovos e mussarela."
@@ -42,7 +42,7 @@
     {
         "id": 6,
         "name": "Calabresa",
-        "img": "calabresa.png",
+        "img": "img/calabresa.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Calabresa e cebola."
@@ -50,7 +50,7 @@
     {
         "id": 7,
         "name": "Baiana",
-        "img": "baiana.png",
+        "img": "img/baiana.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Calabresa, ovos, pimenta e mussarela."
@@ -58,7 +58,7 @@
     {
         "id": 8,
         "name": "Moda da casa",
-        "img": "moda.png",
+        "img": "img/moda.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Presunto, mussarela e ovos."
@@ -66,7 +66,7 @@
     {
         "id": 9,
         "name": "Três Queijos",
-        "img": "queijo.png",
+        "img": "img/queijo.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, parmesão e requeijão."
@@ -74,7 +74,7 @@
     {
         "id": 10,
         "name": "Frango com Catupiry",
-        "img": "frango.png",
+        "img": "img/frango.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, frango e Catupiry."
@@ -82,7 +82,7 @@
     {
         "id": 11,
         "name": "Vegetariana",
-        "img": "vegetariana.png",
+        "img": "img/vegetariana.png",
         "price": [24.99, 24.99, 24.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Mussarela, brócolis e milho."
@@ -90,7 +90,7 @@
     {
         "id": 12,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "img/pizzanomedesconhecido.jpg",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
@@ -98,7 +98,7 @@
     {
         "id": 13,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "img/pizzanomedesconhecido.jpg",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
@@ -106,7 +106,7 @@
     {
         "id": 14,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "img/pizzanomedesconhecido.jpg",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
