@@ -1,6 +1,6 @@
 
 function redirecionar() {
-    const novaPagina = "outra-pagina.html";
+    const novaPagina = "menu.html";
     
     window.location.href = novaPagina;
 }
