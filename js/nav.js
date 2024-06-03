@@ -61,22 +61,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function scrollToCategory(category) {
-    let targetId;
-    switch (category) {
-        case 'pizzasSalgadas':
-            targetId = '1';
-            break;
-        case 'bebidas':
-            targetId = '12';
-            break;
-        case 'pizzasDoces':
-            targetId = '24';
-            break;
-        default:
-            targetId = '1'; // Caso nenhum caso corresponda, role até as pizzas salgadas
-            break;
-    }
-    const targetElement = document.getElementById(targetId);
-    targetElement.scrollIntoView({ behavior: 'smooth' });
-}
