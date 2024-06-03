@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
 }
 /* Estilo para os botões de navegação */
+/* Estilo para os botões de navegação */
 nav {
     position: fixed;
     top: 0;
@@ -25,6 +26,7 @@ nav {
     text-align: center; /* Alinhamento do texto */
     z-index: 1000; /* Z-index alto para garantir que os botões fiquem sobre outros elementos */
   }
+  
   
   nav button {
     background-color: transparent;
