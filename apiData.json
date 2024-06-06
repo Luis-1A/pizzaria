@@ -107,7 +107,7 @@
     {
         "id": 21,
         "name": "Guaraná Antártica",
-        "img": "img/gaurana",
+        "img": "img/gaurana.png",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Guaraná Antártica"
@@ -115,7 +115,7 @@
     {
         "id": 22,
         "name": "Pepsi",
-        "img": "img/Pepsi.png",
+        "img": "img/Pepsi.pn",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Pepsi"
