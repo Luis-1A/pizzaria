@@ -107,7 +107,7 @@
     {
         "id": 21,
         "name": "Guaraná Antártica",
-        "img": "img/gaurana.png",
+        "img": "img/guarana.png",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Guaraná Antártica"
