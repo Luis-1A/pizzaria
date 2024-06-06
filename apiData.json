@@ -92,32 +92,32 @@
         "id": 19,
         "name": "Refrigerante 1",
         "img": "https://via.placeholder.com/150",
-        "price": [10.00],
-        "sizes": ["Lata"],
+        "price": [10.00, 10.00, 100],
+        "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante 1"
     },
     {
         "id": 20,
         "name": "Refrigerante 2",
         "img": "https://via.placeholder.com/150",
-        "price": [10.00],
-        "sizes": ["Lata"],
+        "price": [10.00, 10.00, 100],
+        "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante 2"
     },
     {
         "id": 21,
         "name": "Refrigerante 3",
         "img": "https://via.placeholder.com/150",
-        "price": [10.00],
-        "sizes": ["Lata"],
+        "price": [10.00, 10.00, 100],
+        "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante 3"
     },
     {
         "id": 22,
         "name": "Refrigerante 4",
         "img": "https://via.placeholder.com/150",
-        "price": [10.00],
-        "sizes": ["Lata"],
+        "price": [10.00, 10.00, 100],
+        "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante 4"
     }
 ]
