@@ -1,3 +1,5 @@
+
+
 [
     {
         "id": 1,
@@ -114,7 +116,7 @@
     {
         "id": 15,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "https://via.placeholder.com/150",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
@@ -122,7 +124,7 @@
     {
         "id": 16,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "https://via.placeholder.com/150",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
@@ -130,7 +132,7 @@
     {
         "id": 17,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "https://via.placeholder.com/150",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
@@ -138,9 +140,33 @@
     {
         "id": 18,
         "name": "Pizza sem nome",
-        "img": "pizzanomedesconhecido.jpg",
+        "img": "https://via.placeholder.com/150",
         "price": [29.99, 29.99, 29.99],
         "sizes": ["320g", "530g", "860g"],
         "description": "Descrição indisponível."
+    },
+    {
+        "id": 19,
+        "name": "Refrigerante 1",
+        "img": "https://via.placeholder.com/150",
+        "price": [10.00],
+        "sizes": ["Lata"],
+        "description": "Refrigerante 1"
+    },
+    {
+        "id": 20,
+        "name": "Refrigerante 2",
+        "img": "https://via.placeholder.com/150",
+        "price": [10.00],
+        "sizes": ["Lata"],
+        "description": "Refrigerante 2"
+    },
+    {
+        "id": 21,
+        "name": "Refrigerante 3",
+        "img": "https://via.placeholder.com/150",
+        "price": [10.00],
+        "sizes": ["Lata"],
+        "description": "Refrigerante 3"
     }
 ]
