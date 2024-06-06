@@ -26,9 +26,6 @@ header = header.innerHTML = `<div class="menu-area">
                 <a href="menu.html">
                     <li>Pizzas</li>
                 </a>
-                <a href="depois eu colocoum link" target="_blank">
-                    <li>Sobre</li>
-                </a>
                 <a href="https://wa.me/+5561981240738" target="_blank">
                     <li>Contato</li>
                 </a>
