@@ -91,7 +91,7 @@
     {
         "id": 19,
         "name": "Coca Cola",
-        "img": "https://via.placeholder.com/150",
+        "img": "img/coca.png",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Coca Cola"
@@ -99,7 +99,7 @@
     {
         "id": 20,
         "name": "Fanta Laranja",
-        "img": "https://via.placeholder.com/150",
+        "img": "img/fanta.png",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Fanta Laranja"
@@ -107,7 +107,7 @@
     {
         "id": 21,
         "name": "Guaraná Antártica",
-        "img": "https://via.placeholder.com/150",
+        "img": "img/gaurana",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Guaraná Antártica"
@@ -115,7 +115,7 @@
     {
         "id": 22,
         "name": "Pepsi",
-        "img": "https://via.placeholder.com/150",
+        "img": "img/Pepsi.png",
         "price": [10.00, 10.00, 10.00],
         "sizes": ["320g", "530g", "860g"],
         "description": "Refrigerante Pepsi"
