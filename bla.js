@@ -1,8 +1,8 @@
 
 function redirecionar() {
-    const novaPagina = "menu.html";
+    const pintoPequeno = "menu.html";
     
-    window.location.href = novaPagina;
+    window.location.href = pintoPequeno;
 }
 
 setTimeout(redirecionar, 2500);
