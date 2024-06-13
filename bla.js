@@ -5,4 +5,4 @@ function redirecionar() {
     window.location.href = novaPagina;
 }
 
-setTimeout(redirecionar, 5000);
+setTimeout(redirecionar, 2500);
