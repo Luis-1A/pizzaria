@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -16,7 +15,7 @@
 <body>
   <div class="loader-content">
     <div class="loader-circle"></div>
-     <span class="loader-text">enviando...</span> 
+    <span class="loader-text">enviando...</span>
   </div>
 
   <header class="header"></header>
@@ -45,13 +44,8 @@
       </div>
       <main>
         <h1 class="titulo--h1">Pizzas</h1>
-        <nav>
-    
-</nav>
-
-        <div class="pizza-area">
-
-        </div>
+        <nav></nav>
+        <div class="pizza-area"></div>
       </main>
       <aside>
         <div class="cart--area">
@@ -73,7 +67,6 @@
               <span>Subtotal</span>
               <span>R$ --</span>
             </div>
-
             <div class="cart--totalitem total big">
               <span>Total</span>
               <span>R$ --</span>
@@ -127,7 +120,7 @@
         <div class="pizzaWindowBody success">
           <div class="pedido-finalizado">
             <i class="fa-solid fa-circle-check success-img"></i>
-            <form id="orderForm">
+            <form id="orderForm" action="process_order.php" method="POST">
               <div class="contato">
                 <fieldset>
                   <legend>Informações de Contato</legend>
@@ -170,13 +163,12 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-
-
-
-      <script src="js/nav.js"></script>
-      <script type="text/javascript" src="js/geral.js"></script>
-      <script type="text/javascript" src="js/cart.js"></script>
+  <script src="js/nav.js"></script>
+  <script type="text/javascript" src="js/geral.js"></script>
+  <script type="text/javascript" src="js/cart.js"></script>
 </body>
 
 </html>
