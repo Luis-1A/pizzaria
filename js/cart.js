@@ -216,8 +216,7 @@ function enviarPedidoParaWhatsApp() {
     mensagem += "- Nome: " + nome + "\n";
     mensagem += "- Endereço: " + endereco + "\n";
     mensagem += "- Referência: " + referencia + "\n";
-    mensagem += "- Contato: " + contato + "\n";
-    mensagem += "Método de Pagamento: " + metodoPagamento + "\n\n";
+    mensagem += "- Método de Pagamento: " + metodoPagamento + "\n\n";
 
     mensagem += "Itens do Carrinho:\n";
     for (let i in cart) {
