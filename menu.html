@@ -1,261 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/8b4042ccf0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
-    <title>Pizzaria Sabor Explosivo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/8b4042ccf0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+  <title>Pizzaria</title>
 </head>
+
 <body>
-    <!-- Loader -->
-    <div class="loader-content">
-        <div class="loader-circle"></div>
-        <span class="loader-text">Carregando delícias...</span>
+  <div class="loader-content">
+    <div class="loader-circle"></div>
+    <span class="loader-text">enviando...</span>
+  </div>
+
+  <header class="header"></header>
+
+  <div class="container">
+    <div class="container-area">
+      <div class="models">
+        <div class="pizza-item">
+          <a href="">
+            <div class="pizza-item--img"><img src="" /></div>
+            <div class="pizza-item--add">+</div>
+            <div class="pizza-item--price">R$ --</div>
+            <div class="pizza-item--name">--</div>
+            <div class="pizza-item--desc">--</div>
+          </a>
+        </div>
+        <div class="cart--item">
+          <img src="" />
+          <div class="cart--item-nome">--</div>
+          <div class="cart--item--qtarea">
+            <button class="cart--item-qtmenos">-</button>
+            <div class="cart--item--qt">1</div>
+            <button class="cart--item-qtmais">+</button>
+          </div>
+        </div>
+      </div>
+      <main>
+        <h1 class="titulo--h1">Pizzas</h1>
+        <nav></nav>
+        <div class="pizza-area"></div>
+      </main>
+      <aside>
+        <div class="cart--area">
+          <div class="menu-closer">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <h1>Suas Pizzas</h1>
+          <div class="cart"></div>
+          <div class="cart--details">
+            <div class="cart--totalitem pizzasValor">
+              <span>Pizzas</span>
+              <span>R$ --</span>
+            </div>
+            <div class="cart--totalitem entrega">
+              <span>Taxa de entrega</span>
+              <span>R$ --</span>
+            </div>
+            <div class="cart--totalitem subtotal">
+              <span>Subtotal</span>
+              <span>R$ --</span>
+            </div>
+            <div class="cart--totalitem total big">
+              <span>Total</span>
+              <span>R$ --</span>
+            </div>
+            <div class="cart--finalizar">Finalizar a pedido 🍕</div>
+          </div>
+        </div>
+      </aside>
+      <div class="pizzaWindowArea">
+        <div class="pizzaWindowBody modal">
+          <div class="pizzaInfo--cancelMobileButton">
+            <i class="fa-solid fa-arrow-left"></i>
+          </div>
+          <div class="pizzaBig">
+            <img src="" />
+          </div>
+          <div class="pizzaInfo">
+            <h1>--</h1>
+            <div class="pizzaInfo--desc">--</div>
+            <div class="pizzaInfo--sizearea">
+              <div class="pizzaInfo--sector">Tamanho</div>
+              <div class="pizzaInfo--sizes">
+                <div data-key="0" class="pizzaInfo--size">
+                  GRANDE <span>--</span>
+                </div>
+                <div data-key="1" class="pizzaInfo--size">
+                  GRANDE <span>--</span>
+                </div>
+                <div data-key="2" class="pizzaInfo--size selected">
+                  GRANDE <span>--</span>
+                </div>
+              </div>
+            </div>
+            <div class="pizzaInfo--pricearea">
+              <div class="pizzaInfo--sector">Preço</div>
+              <div class="pizzaInfo--price">
+                <div class="pizzaInfo--actualPrice">R$ --</div>
+                <div class="pizzaInfo--qtarea">
+                  <button class="pizzaInfo--qtmenos">-</button>
+                  <div class="pizzaInfo--qt">1</div>
+                  <button class="pizzaInfo--qtmais">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
+            <div class="pizzaInfo--cancelButton">Cancelar</div>
+          </div>
+        </div>
+      </div>
+      <div class="success pizzaWindowArea">
+        <div class="pizzaWindowBody success">
+          <div class="pedido-finalizado">
+            <i class="fa-solid fa-circle-check success-img"></i>
+            <form id="orderForm" action="process_order.php" method="POST">
+              <div class="contato">
+                <fieldset>
+                  <legend>Informações de Contato</legend>
+                  <label for='nome'>Nome</label>
+                  <input type="text" id="nome" name='nome' placeholder="Informe seu nome" required />
+                  <br />
+                  <label for='endereco'>Endereço</label>
+                  <input type="text" id="endereco" name='endereco' placeholder="Informe seu endereço" required />
+                  <br />
+                   <label for='contato'>Contato</label>
+                  <input type="text" id="contato" name='contato' placeholder="Informe seu contato" required />
+
+                  <label for='referencia'>Ponto de Referência</label>
+                  <input type="text" id="referencia" name='referencia' placeholder="Informe um ponto de referência" />
+                  <br />
+                 
+                  <br />
+                  <label for="metodoPagamento">Método de Pagamento</label>
+                  <select id="metodoPagamento" name="metodoPagamento" required>
+                    <option value="">Selecione o método de pagamento</option>
+                    <option value="dinheiro">Dinheiro</option>
+                    <option value="cartao">Cartão</option>
+                    <option value="pix">PIX</option>
+                  </select>
+                  <br />
+                  <div id="trocoSection" style="display: none;">
+                    <label for="troco">Precisa de troco?</label>
+                    <select id="troco" name="troco">
+                      <option value="nao">Não</option>
+                      <option value="sim">Sim</option>
+                    </select>
+                    <br />
+                    <div id="valorTrocoSection" style="display: none;">
+                      <label for="valorTroco">Valor da Cédula</label>
+                      <input type="number" id="valorTroco" name="valorTroco" placeholder="Informe o valor da cédula" />
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <input type='submit' id='submit' value='Continuar pedido pelo WhatsApp' />
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Header com Navegação -->
-    <header class="header">
-        <div class="menu-area">
-            <div class="logo">
-                <img src="img/logo-pizza.png" alt="Logo Pizzaria">
-            </div>
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox" class="menu_hamburger">
-                <div class="line line-main"></div>
-                <div class="line line-split"></div>
-            </label>
-            <nav class="menu">
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#pizzas">Pizzas</a></li>
-                    <li><a href="#promocoes">Promoções</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Carrossel de Promoções -->
-    <section class="promo-carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/promo1.jpg" alt="Promoção 1">
-                <div class="carousel-caption">
-                    <h2>Combo Família</h2>
-                    <p>2 Pizzas Grandes + Refrigerante 2L por R$ 59,90</p>
-                    <button class="promo-btn">Peça Agora</button>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="img/promo2.jpg" alt="Promoção 2">
-                <div class="carousel-caption">
-                    <h2>Terça Maluca</h2>
-                    <p>Qualquer pizza média por R$ 29,90</p>
-                    <button class="promo-btn">Aproveite</button>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control prev"><i class="fa-solid fa-chevron-left"></i></button>
-        <button class="carousel-control next"><i class="fa-solid fa-chevron-right"></i></button>
-    </section>
-
-    <!-- Área Principal -->
-    <div class="container">
-        <div class="container-area">
-            <!-- Modelos (mantidos para JS) -->
-            <div class="models">
-                <div class="pizza-item">
-                    <a href="">
-                        <div class="pizza-item--img"><img src="" /></div>
-                        <div class="pizza-item--add">+</div>
-                        <divව
-
-<div class="pizza-item--price">R$ --</div>
-                        <div class="pizza-item--name">--</div>
-                        <div class="pizza-item--desc">--</div>
-                    </a>
-                </div>
-                <div class="cart--item">
-                    <img src="" />
-                    <div class="cart--item-nome">--</div>
-                    <div class="cart--item--qtarea">
-                        <button class="cart--item-qtmenos">-</button>
-                        <div class="cart--item--qt">1</div>
-                        <button class="cart--item-qtmais">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Seção de Pizzas -->
-            <main id="pizzas">
-                <h1 class="titulo--h1">Nossas Pizzas</h1>
-                <div class="pizza-area"></div>
-            </main>
-
-            <!-- Avaliações Rápidas -->
-            <section class="reviews">
-                <h2>O que nossos clientes dizem</h2>
-                <div class="review-list">
-                    <div class="review-item">
-                        <p>"Melhor pizza da cidade! Entrega rápida e sabor incrível!"</p>
-                        <div class="stars">★★★★★</div>
-                        <span>- João S.</span>
-                    </div>
-                    <div class="review-item">
-                        <p>"Adoro as promoções e o atendimento nota 10!"</p>
-                        <div class="stars">★★★★☆</div>
-                        <span>- Maria P.</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Carrinho Lateral -->
-            <aside>
-                <div class="cart--area">
-                    <div class="menu-closer">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                    <h1>Seu Carrinho</h1>
-                    <div class="cart"></div>
-                    <div class="cart--details">
-                        <div class="cart--totalitem pizzasValor">
-                            <span>Pizzas</span>
-                            <span>R$ --</span>
-                        </div>
-                        <div class="cart--totalitem entrega">
-                            <span>Taxa de entrega</span>
-                            <span>R$ --</span>
-                        </div>
-                        <div class="cart--totalitem total big">
-                            <span>Total</span>
-                            <span>R$ --</span>
-                        </div>
-                        <div class="cart--finalizar">Finalizar Pedido 🍕</div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Modal de Detalhes da Pizza -->
-            <div class="pizzaWindowArea">
-                <div class="pizzaWindowBody">
-                    <div class="pizzaInfo--cancelMobileButton">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </div>
-                    <div class="pizzaBig">
-                        <img src="" alt="Pizza" />
-                    </div>
-                    <div class="pizzaInfo">
-                        <h1>--</h1>
-                        <div class="pizzaInfo--desc">--</div>
-                        <div class="pizzaInfo--sizearea">
-                            <div class="pizzaInfo--sector">Tamanho</div>
-                            <div class="pizzaInfo--sizes">
-                                <div data-key="0" class="pizzaInfo--size">Pequena <span>--</span></div>
-                                <div data-key="1" class="pizzaInfo--size">Média <span>--</span></div>
-                                <div data-key="2" class="pizzaInfo--size selected">Grande <span>--</span></div>
-                            </div>
-                        </div>
-                        <div class="pizzaInfo--pricearea">
-                            <div class="pizzaInfo--sector">Preço</div>
-                            <div class="pizzaInfo--price">
-                                <div class="pizzaInfo--actualPrice">R$ --</div>
-                                <div class="pizzaInfo--qtarea">
-                                    <button class="pizzaInfo--qtmenos">-</button>
-                                    <div class="pizzaInfo--qt">1</div>
-                                    <button class="pizzaInfo--qtmais">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pizzaInfo--addButton">Adicionar ao Carrinho</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal de Finalização -->
-            <div class="success pizzaWindowArea">
-                <div class="pizzaWindowBody success">
-                    <div class="pedido-finalizado">
-                        <i class="fa-solid fa-circle-check success-img"></i>
-                        <h2>Pedido Enviado!</h2>
-                        <form id="orderForm" action="process_order.php" method="POST">
-                            <fieldset>
-                                <legend>Finalize seu Pedido</legend>
-                                <label for="nome">Nome</label>
-                                <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-                                <label for="endereco">Endereço</label>
-                                <input type="text" id="endereco" name="endereco" placeholder="Seu endereço" required />
-                                <label for="contato">Contato</label>
-                                <input type="text" id="contato" name="contato" placeholder="Telefone/WhatsApp" required />
-                                <label for="metodoPagamento">Pagamento</label>
-                                <select id="metodoPagamento" name="metodoPagamento" required>
-                                    <option value="">Escolha</option>
-                                    <option value="dinheiro">Dinheiro</option>
-                                    <option value="cartao">Cartão</option>
-                                    <option value="pix">PIX</option>
-                                </select>
-                                <div id="trocoSection" style="display: none;">
-                                    <label for="troco">Precisa de troco?</label>
-                                    <select id="troco" name="troco">
-                                        <option value="nao">Não</option>
-                                        <option value="sim">Sim</option>
-                                    </select>
-                                    <div id="valorTrocoSection" style="display: none;">
-                                        <label for="valorTroco">Valor da Cédula</label>
-                                        <input type="number" id="valorTroco" name="valorTroco" placeholder="Ex: 50" />
-                                    </div>
-                                </div>
-                            </fieldset>
-                            <input type="submit" id="submit" value="Enviar via WhatsApp" />
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Botão Flutuante de WhatsApp -->
-    <a href="https://wa.me/5511999999999" target="_blank" class="whatsapp-float">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Pizzaria Sabor Explosivo | <a href="#contato">Fale Conosco</a></p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/nav.js"></script>
-    <script src="js/geral.js"></script>
-    <script src="js/cart.js"></script>
-    <script>
-        // Carrossel simples
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            carouselItems.forEach(item => item.classList.remove('active'));
-            carouselItems[index].classList.add('active');
-        }
-
-        document.querySelector('.carousel-control.prev').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
-            showSlide(currentIndex);
-        });
-
-        document.querySelector('.carousel-control.next').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            showSlide(currentIndex);
-        });
-
-        // Auto-rodar carrossel
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % carouselItems.length;
-            showSlide(currentIndex);
-        }, 5000);
-    </script>
+  <script src="js/nav.js"></script>
+  <script type="text/javascript" src="js/geral.js"></script>
+  <script type="text/javascript" src="js/cart.js"></script>
 </body>
+
 </html>
