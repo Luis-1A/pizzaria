@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/8b4042ccf0.js" crossorigin="anonymous"></script>
-    <title>Pizzaria Delícia</title>
+    <title>Pizza Delivery</title>
     <style>
         * {
             margin: 0;
@@ -15,9 +15,24 @@
         }
 
         body {
-            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            background: #ff6200;
             color: #fff;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Fundo animado */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff6200, #ff8c00, #ffa500);
+            opacity: 0.2;
+            z-index: -1;
+            animation: gradientShift 10s ease infinite;
         }
 
         /* Header */
@@ -25,24 +40,50 @@
             position: fixed;
             width: 100%;
             padding: 20px 5%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: slideDown 1s ease;
+        }
+
+        .logo {
+            font-size: 2em;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: pulseLogo 2s infinite;
         }
 
         .nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.1em;
-            transition: 0.3s;
+            margin: 0 25px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #ff8c00;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after {
+            width: 100%;
         }
 
         .nav a:hover {
-            color: #ff6b6b;
-            transform: translateY(-2px);
+            color: #ff8c00;
+            transform: translateY(-3px);
         }
 
         /* Main */
@@ -51,6 +92,8 @@
             display: flex;
             align-items: center;
             padding: 0 5%;
+            position: relative;
+            overflow: hidden;
         }
 
         .home-area {
@@ -64,183 +107,381 @@
         .left-home {
             flex: 1;
             min-width: 300px;
-            padding: 40px;
+            padding: 60px;
+            position: relative;
+            z-index: 2;
         }
 
         .left-text1 {
-            font-size: 3.5em;
-            font-weight: 800;
+            font-size: 4em;
+            font-weight: 900;
             text-transform: uppercase;
-            animation: slideInLeft 1s ease;
+            letter-spacing: 3px;
+            animation: fadeInUp 1s ease, textGlow 2s infinite alternate;
         }
 
         .left-text2 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #ffd700;
-            margin: 20px 0;
-            animation: slideInLeft 1.2s ease;
+            margin: 25px 0;
+            animation: slideInLeft 1.2s ease, bounceText 2s infinite;
         }
 
         .left-text3 {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            animation: slideInLeft 1.4s ease;
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            animation: fadeIn 1.4s ease;
         }
 
         .button {
             display: inline-flex;
             align-items: center;
-            padding: 15px 30px;
-            background: #ff6b6b;
+            padding: 20px 40px;
+            background: #ff8c00;
             border-radius: 50px;
             text-decoration: none;
             color: #fff;
-            font-weight: 600;
-            transition: 0.3s;
-            animation: bounceIn 1.6s ease;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: bounceButton 1.5s infinite;
         }
 
         .button:hover {
-            transform: scale(1.1);
+            transform: scale(1.15) rotate(5deg);
             background: #ffd700;
             color: #000;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .button i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover i {
+            transform: translateX(5px);
         }
 
         .right-home {
             flex: 1;
             min-width: 300px;
             position: relative;
+            z-index: 1;
         }
 
         .pizza-container {
             position: relative;
-            animation: float 4s ease-in-out infinite;
+            animation: floatPizza 3s ease-in-out infinite, rotatePizza 20s linear infinite;
         }
 
         .pizza-img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 20px 20px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.4));
+            transition: transform 0.5s ease;
         }
 
-        /* Promoção */
-        .promo-section {
-            padding: 80px 5%;
-            background: rgba(255, 255, 255, 0.1);
-            text-align: center;
+        .pizza-img:hover {
+            transform: scale(1.1);
         }
 
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+        /* Partículas animadas */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
         }
 
-        .promo-card {
-            background: #fff;
-            color: #333;
-            padding: 20px;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .promo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 215, 0, 0.7);
+            border-radius: 50%;
+            animation: floatParticle 5s infinite ease-in-out;
         }
 
         /* Footer */
         footer {
-            padding: 40px 5%;
+            padding: 50px 5%;
             text-align: center;
             background: #1a1a1a;
+            position: relative;
+            overflow: hidden;
         }
 
         footer a {
             color: #ffd700;
             text-decoration: none;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff8c00;
+            text-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
         }
 
         /* Animações */
-        @keyframes slideInLeft {
-            from { transform: translateX(-100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
+        @keyframes pulseLogo {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes bounceText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+        }
+
+        @keyframes bounceButton {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes floatPizza {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+
+        @keyframes rotatePizza {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+            50% { transform: translateY(-100px) translateX(20px); opacity: 0.4; }
+            100% { transform: translateY(-200px) translateX(-20px); opacity: 0; }
+        }
+
+        /* Mais animações personalizadas */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
             50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        @keyframes wiggle {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
         }
 
-        /* Responsividade */
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(255, 140, 0, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(255, 140, 0, 0.5); }
+        }
+
+        /* Estilização adicional */
+        .highlight {
+            color: #ffd700;
+            animation: pulse 2s infinite;
+        }
+
+        .shadow-text {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .rotate-hover:hover {
+            animation: spin 1s linear infinite;
+        }
+
+        .wiggle-hover:hover {
+            animation: wiggle 0.5s ease infinite;
+        }
+
+        /* Partículas específicas */
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-duration: 4s; }
+        .particle:nth-child(2) { left: 30%; top: 40%; animation-duration: 5s; }
+        .particle:nth-child(3) { left: 50%; top: 60%; animation-duration: 6s; }
+        .particle:nth-child(4) { left: 70%; top: 30%; animation-duration: 4.5s; }
+        .particle:nth-child(5) { left: 90%; top: 50%; animation-duration: 5.5s; }
+
+        /* Efeitos de transição */
+        .fade-transition {
+            transition: opacity 0.5s ease;
+        }
+
+        .scale-transition {
+            transition: transform 0.4s ease;
+        }
+
+        .color-transition {
+            transition: color 0.3s ease, background 0.3s ease;
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 1024px) {
+            .left-text1 { font-size: 3em; }
+            .left-text2 { font-size: 2em; }
+            .left-text3 { font-size: 1.2em; }
+            .button { padding: 15px 30px; }
+        }
+
         @media (max-width: 768px) {
+            .home-area { flex-direction: column; text-align: center; }
+            .left-home { padding: 40px 20px; }
             .left-text1 { font-size: 2.5em; }
+            .left-text2 { font-size: 1.8em; }
+            .nav a { margin: 0 15px; font-size: 1em; }
+        }
+
+        @media (max-width: 480px) {
+            .logo { font-size: 1.5em; }
+            .left-text1 { font-size: 2em; }
             .left-text2 { font-size: 1.5em; }
-            .home-area { flex-direction: column; }
+            .button { padding: 12px 25px; font-size: 1em; }
+            .nav a { margin: 0 10px; }
+        }
+
+        /* Estilos adicionais para camadas */
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
+            animation: fadePulse 3s infinite;
+        }
+
+        @keyframes fadePulse {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 0.1; }
+        }
+
+        /* Efeitos de borda */
+        .border-glow {
+            border: 2px solid #ffd700;
+            animation: borderPulse 2s infinite;
+        }
+
+        @keyframes borderPulse {
+            0% { border-color: #ffd700; }
+            50% { border-color: #ff8c00; }
+            100% { border-color: #ffd700; }
+        }
+
+        /* Efeitos de sombra */
+        .deep-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animações de entrada adicionais */
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Estilos para camadas de fundo */
+        .bg-layer {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 140, 0, 0.3);
+            border-radius: 50%;
+            animation: floatLayer 6s infinite ease-in-out;
+        }
+
+        .bg-layer:nth-child(1) { top: 10%; left: 15%; }
+        .bg-layer:nth-child(2) { top: 60%; left: 70%; }
+        .bg-layer:nth-child(3) { top: 30%; left: 40%; }
+
+        @keyframes floatLayer {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-50px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="logo">Pizzaria Delícia</div>
+        <div class="logo">Pizza Delivery</div>
         <nav class="nav">
             <a href="#home">Home</a>
             <a href="#menu">Cardápio</a>
-            <a href="#promo">Promoções</a>
             <a href="#contact">Contato</a>
         </nav>
     </header>
 
     <main class="home" id="home">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="bg-layer"></div>
+        <div class="bg-layer"></div>
+        <div class="bg-layer"></div>
         <div class="home-area">
             <section class="left-home">
                 <div class="left-area">
-                    <div class="left-text1">Pizzas Deliciosas</div>
-                    <div class="left-text2">Entrega Grátis</div>
-                    <div class="left-text3">Peça agora e receba em minutos!</div>
+                    <div class="left-text1 shadow-text">Pizza Delivery</div>
+                    <div class="left-text2 highlight">Entrega Grátis</div>
+                    <div class="left-text3">Peça agora e receba quentinho!</div>
                     <a href="2.html">
-                        <div class="button">Fazer Pedido <i class="fa-solid fa-arrow-right"></i></div>
+                        <div class="button deep-shadow">Fazer Pedido <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
                 </div>
             </section>
             <section class="right-home">
                 <div class="pizza-container">
-                    <img src="img/ia.png" alt="Pizza" class="pizza-img">
+                    <img src="img/ia.png" alt="Pizza" class="pizza-img wiggle-hover">
                 </div>
             </section>
         </div>
     </main>
-
-    <section class="promo-section" id="promo">
-        <h2>Promoções do Dia</h2>
-        <div class="promo-grid">
-            <?php
-            $promos = [
-                ["nome" => "Pizza Família", "preco" => "R$ 49,90", "desc" => "Compre 1 pizza família e ganhe 1 refrigerante 2L"],
-                ["nome" => "Combo Casal", "preco" => "R$ 39,90", "desc" => "1 pizza média + 2 refrigerantes lata"],
-                ["nome" => "Quinta da Pizza", "preco" => "R$ 29,90", "desc" => "Qualquer pizza média às quintas"]
-            ];
-            
-            foreach ($promos as $promo) {
-                echo "
-                    <div class='promo-card'>
-                        <h3>{$promo['nome']}</h3>
-                        <p class='price'>{$promo['preco']}</p>
-                        <p>{$promo['desc']}</p>
-                        <button class='promo-btn'>Pedir Agora</button>
-                    </div>
-                ";
-            }
-            ?>
-        </div>
-    </section>
 
     <footer id="contact">
         <a href="https://www.instagram.com/luis__fernando__santos?igsh=bjZjOXd4eHQxenVv" target="_blank">
@@ -255,37 +496,6 @@
                 e.preventDefault();
                 const section = document.querySelector(this.getAttribute('href'));
                 section.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Animação de entrada para promo cards
-        const promoCards = document.querySelectorAll('.promo-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.2 });
-
-        promoCards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = '0.5s ease';
-            observer.observe(card);
-        });
-
-        // Botão de pedido interativo
-        const buttons = document.querySelectorAll('.promo-btn');
-        buttons.forEach(btn => {
-            btn.addEventListener('mouseover', () => {
-                btn.style.background = '#ffd700';
-                btn.style.color = '#000';
-            });
-            btn.addEventListener('mouseout', () => {
-                btn.style.background = '#ff6b6b';
-                btn.style.color = '#fff';
             });
         });
     </script>
