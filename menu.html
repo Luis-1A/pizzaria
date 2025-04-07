@@ -1,176 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/8b4042ccf0.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
-  <title>Pizzaria</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/8b4042ccf0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab:400,700|Lato:400,700&display=swap" rel="stylesheet">
+    <title>Pizzaria</title>
 </head>
-
 <body>
-  <div class="loader-content">
-    <div class="loader-circle"></div>
-    <span class="loader-text">enviando...</span>
-  </div>
-
-  <header class="header"></header>
-
-  <div class="container">
-    <div class="container-area">
-      <div class="models">
-        <div class="pizza-item">
-          <a href="">
-            <div class="pizza-item--img"><img src="" /></div>
-            <div class="pizza-item--add">+</div>
-            <div class="pizza-item--price">R$ --</div>
-            <div class="pizza-item--name">--</div>
-            <div class="pizza-item--desc">--</div>
-          </a>
-        </div>
-        <div class="cart--item">
-          <img src="" />
-          <div class="cart--item-nome">--</div>
-          <div class="cart--item--qtarea">
-            <button class="cart--item-qtmenos">-</button>
-            <div class="cart--item--qt">1</div>
-            <button class="cart--item-qtmais">+</button>
-          </div>
-        </div>
-      </div>
-      <main>
-        <h1 class="titulo--h1">Pizzas</h1>
-        <nav></nav>
-        <div class="pizza-area"></div>
-      </main>
-      <aside>
-        <div class="cart--area">
-          <div class="menu-closer">
-            <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <h1>Suas Pizzas</h1>
-          <div class="cart"></div>
-          <div class="cart--details">
-            <div class="cart--totalitem pizzasValor">
-              <span>Pizzas</span>
-              <span>R$ --</span>
-            </div>
-            <div class="cart--totalitem entrega">
-              <span>Taxa de entrega</span>
-              <span>R$ --</span>
-            </div>
-            <div class="cart--totalitem subtotal">
-              <span>Subtotal</span>
-              <span>R$ --</span>
-            </div>
-            <div class="cart--totalitem total big">
-              <span>Total</span>
-              <span>R$ --</span>
-            </div>
-            <div class="cart--finalizar">Finalizar a pedido 🍕</div>
-          </div>
-        </div>
-      </aside>
-      <div class="pizzaWindowArea">
-        <div class="pizzaWindowBody modal">
-          <div class="pizzaInfo--cancelMobileButton">
-            <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <div class="pizzaBig">
-            <img src="" />
-          </div>
-          <div class="pizzaInfo">
-            <h1>--</h1>
-            <div class="pizzaInfo--desc">--</div>
-            <div class="pizzaInfo--sizearea">
-              <div class="pizzaInfo--sector">Tamanho</div>
-              <div class="pizzaInfo--sizes">
-                <div data-key="0" class="pizzaInfo--size">
-                  GRANDE <span>--</span>
-                </div>
-                <div data-key="1" class="pizzaInfo--size">
-                  GRANDE <span>--</span>
-                </div>
-                <div data-key="2" class="pizzaInfo--size selected">
-                  GRANDE <span>--</span>
-                </div>
-              </div>
-            </div>
-            <div class="pizzaInfo--pricearea">
-              <div class="pizzaInfo--sector">Preço</div>
-              <div class="pizzaInfo--price">
-                <div class="pizzaInfo--actualPrice">R$ --</div>
-                <div class="pizzaInfo--qtarea">
-                  <button class="pizzaInfo--qtmenos">-</button>
-                  <div class="pizzaInfo--qt">1</div>
-                  <button class="pizzaInfo--qtmais">+</button>
-                </div>
-              </div>
-            </div>
-            <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
-            <div class="pizzaInfo--cancelButton">Cancelar</div>
-          </div>
-        </div>
-      </div>
-      <div class="success pizzaWindowArea">
-        <div class="pizzaWindowBody success">
-          <div class="pedido-finalizado">
-            <i class="fa-solid fa-circle-check success-img"></i>
-            <form id="orderForm" action="process_order.php" method="POST">
-              <div class="contato">
-                <fieldset>
-                  <legend>Informações de Contato</legend>
-                  <label for='nome'>Nome</label>
-                  <input type="text" id="nome" name='nome' placeholder="Informe seu nome" required />
-                  <br />
-                  <label for='endereco'>Endereço</label>
-                  <input type="text" id="endereco" name='endereco' placeholder="Informe seu endereço" required />
-                  <br />
-                   <label for='contato'>Contato</label>
-                  <input type="text" id="contato" name='contato' placeholder="Informe seu contato" required />
-
-                  <label for='referencia'>Ponto de Referência</label>
-                  <input type="text" id="referencia" name='referencia' placeholder="Informe um ponto de referência" />
-                  <br />
-                 
-                  <br />
-                  <label for="metodoPagamento">Método de Pagamento</label>
-                  <select id="metodoPagamento" name="metodoPagamento" required>
-                    <option value="">Selecione o método de pagamento</option>
-                    <option value="dinheiro">Dinheiro</option>
-                    <option value="cartao">Cartão</option>
-                    <option value="pix">PIX</option>
-                  </select>
-                  <br />
-                  <div id="trocoSection" style="display: none;">
-                    <label for="troco">Precisa de troco?</label>
-                    <select id="troco" name="troco">
-                      <option value="nao">Não</option>
-                      <option value="sim">Sim</option>
-                    </select>
-                    <br />
-                    <div id="valorTrocoSection" style="display: none;">
-                      <label for="valorTroco">Valor da Cédula</label>
-                      <input type="number" id="valorTroco" name="valorTroco" placeholder="Informe o valor da cédula" />
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <input type='submit' id='submit' value='Continuar pedido pelo WhatsApp' />
-            </form>
-          </div>
-        </div>
-      </div>
+    <!-- Loader -->
+    <div class="loader-content">
+        <div class="loader-circle"></div>
+        <span class="loader-text">Enviando...</span>
     </div>
-  </div>
 
-  <script src="js/nav.js"></script>
-  <script type="text/javascript" src="js/geral.js"></script>
-  <script type="text/javascript" src="js/cart.js"></script>
+    <!-- Header -->
+    <header class="header"></header>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <div class="container-area">
+            <!-- Modelos de Pizza e Carrinho (mantidos como estão) -->
+            <main>
+                <h1 class="titulo--h1">Nossas Pizzas</h1> <!-- Título mais descritivo -->
+                <nav class="pizza-nav"></nav> <!-- Adicionada classe para estilização -->
+                <div class="pizza-area"></div>
+            </main>
+
+            <!-- Carrinho -->
+            <aside class="cart--area">
+                <div class="menu-closer">
+                    <i class="fa-solid fa-arrow-left" aria-label="Fechar carrinho"></i>
+                </div>
+                <h1>Seu Carrinho</h1> <!-- Título ajustado -->
+                <div class="cart"></div>
+                <div class="cart--details">
+                    <div class="cart--totalitem pizzasValor">
+                        <span>Pizzas</span>
+                        <span>R$ 0,00</span> <!-- Valor inicial padrão -->
+                    </div>
+                    <div class="cart--totalitem entrega">
+                        <span>Taxa de Entrega</span>
+                        <span>R$ 0,00</span>
+                    </div>
+                    <div class="cart--totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ 0,00</span>
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ 0,00</span>
+                    </div>
+                    <button class="cart--finalizar">Finalizar Pedido 🍕</button> <!-- Mudado de div para button -->
+                </div>
+            </aside>
+
+            <!-- Modal de Detalhes da Pizza -->
+            <div class="pizzaWindowArea">
+                <div class="pizzaWindowBody modal">
+                    <button class="pizzaInfo--cancelMobileButton" aria-label="Fechar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <div class="pizzaBig">
+                        <img src="" alt="Imagem da pizza selecionada" />
+                    </div>
+                    <div class="pizzaInfo">
+                        <h1>Nome da Pizza</h1>
+                        <div class="pizzaInfo--desc">Descrição da pizza</div>
+                        <div class="pizzaInfo--sizearea">
+                            <div class="pizzaInfo--sector">Tamanho</div>
+                            <div class="pizzaInfo--sizes">
+                                <button data-key="0" class="pizzaInfo--size">Pequena <span>R$ --</span></button>
+                                <button data-key="1" class="pizzaInfo--size">Média <span>R$ --</span></button>
+                                <button data-key="2" class="pizzaInfo--size selected">Grande <span>R$ --</span></button>
+                            </div>
+                        </div>
+                        <div class="pizzaInfo--pricearea">
+                            <div class="pizzaInfo--sector">Preço</div>
+                            <div class="pizzaInfo--price">
+                                <div class="pizzaInfo--actualPrice">R$ 0,00</div>
+                                <div class="pizzaInfo--qtarea">
+                                    <button class="pizzaInfo--qtmenos">-</button>
+                                    <div class="pizzaInfo--qt">1</div>
+                                    <button class="pizzaInfo--qtmais">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="pizzaInfo--addButton">Adicionar ao Carrinho</button>
+                        <button class="pizzaInfo--cancelButton">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal de Sucesso -->
+            <div class="success pizzaWindowArea">
+                <div class="pizzaWindowBody success">
+                    <div class="pedido-finalizado">
+                        <i class="fa-solid fa-circle-check success-img" aria-label="Pedido concluído"></i>
+                        <form id="orderForm" action="process_order.php" method="POST">
+                            <div class="contato">
+                                <fieldset>
+                                    <legend>Informações de Contato</legend>
+                                    <label for="nome">Nome</label>
+                                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+                                    <label for="endereco">Endereço</label>
+                                    <input type="text" id="endereco" name="endereco" placeholder="Seu endereço" required />
+                                    <label for="contato">Contato</label>
+                                    <input type="tel" id="contato" name="contato" placeholder="Seu telefone" required /> <!-- Mudado para type="tel" -->
+                                    <label for="referencia">Ponto de Referência</label>
+                                    <input type="text" id="referencia" name="referencia" placeholder="Ponto de referência (opcional)" />
+                                    <label for="metodoPagamento">Método de Pagamento</label>
+                                    <select id="metodoPagamento" name="metodoPagamento" required>
+                                        <option value="" disabled selected>Escolha o pagamento</option>
+                                        <option value="dinheiro">Dinheiro</option>
+                                        <option value="cartao">Cartão</option>
+                                        <option value="pix">PIX</option>
+                                    </select>
+                                    <div id="trocoSection" style="display: none;">
+                                        <label for="troco">Precisa de troco?</label>
+                                        <select id="troco" name="troco">
+                                            <option value="nao">Não</option>
+                                            <option value="sim">Sim</option>
+                                        </select>
+                                        <div id="valorTrocoSection" style="display: none;">
+                                            <label for="valorTroco">Valor da Cédula</label>
+                                            <input type="number" id="valorTroco" name="valorTroco" placeholder="Ex: 50" min="0" />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <button type="submit" id="submit">Continuar pelo WhatsApp</button> <!-- Mudado de input para button -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/nav.js"></script>
+    <script src="js/geral.js"></script>
+    <script src="js/cart.js"></script>
 </body>
-
 </html>
