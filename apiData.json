@@ -1,123 +1,154 @@
-
 [
-    {
-        "id": 1,
-        "name": "Mussarela",
-        "img": "img/mussarela.png",
-        "price": [19.99, 19.99, 19.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela e molho de tomate."
-    },
-    {
-        "id": 2,
-        "name": "Alho e Óleo",
-        "img": "img/alho-e-oleo.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, alho e óleo."
-    },
-    {
-        "id": 3,
-        "name": "Marguerita",
-        "img": "img/marguerita.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, tomate e manjericão."
-    },
-    {
-        "id": 4,
-        "name": "Portuguesa",
-        "img": "img/portuguesa.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela, ovos e azeitona."
-    },
-    {
-        "id": 5,
-        "name": "Bacon",
-        "img": "img/bacon.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Bacon, cebola, ovos e mussarela."
-    },
-    {
-        "id": 6,
-        "name": "Calabresa",
-        "img": "img/calabresa.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa e cebola."
-    },
-    {
-        "id": 7,
-        "name": "Baiana",
-        "img": "img/baiana.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Calabresa, ovos, pimenta e mussarela."
-    },
-    {
-        "id": 8,
-        "name": "Moda da casa",
-        "img": "img/moda.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Presunto, mussarela e ovos."
-    },
-    {
-        "id": 9,
-        "name": "Três Queijos",
-        "img": "img/queijo.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, parmesão e requeijão."
-    },
-    {
-        "id": 10,
-        "name": "Frango com Catupiry",
-        "img": "img/frango.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, frango e Catupiry."
-    },
-    {
-        "id": 11,
-        "name": "Vegetariana",
-        "img": "img/vegetariana.png",
-        "price": [24.99, 24.99, 24.99],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Mussarela, brócolis e milho."
-    },
-    {
-        "id": 19,
-        "name": "Coca Cola",
-        "img": "img/coca.png",
-        "price": [10.00, 10.00, 10.00],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Refrigerante Coca Cola"
-    },
-    {
-        "id": 20,
-        "name": "Fanta Laranja",
-        "img": "img/fanta.png",
-        "price": [10.00, 10.00, 10.00],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Refrigerante Fanta Laranja"
-    },
-    {
-        "id": 21,
-        "name": "Guaraná Antártica",
-        "img": "vscode-vfs://github/Luis-1A/pizzaria/img/guarana.png",
-        "price": [10.00, 10.00, 10.00],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Refrigerante Guaraná Antártica"
-    },
-    {
-        "id": 22,
-        "name": "Pepsi",
-        "img": "img/Pepsi.pn",
-        "price": [10.00, 10.00, 10.00],
-        "sizes": ["320g", "530g", "860g"],
-        "description": "Refrigerante Pepsi"
-    }
+  {
+    "id": 1,
+    "name": "Mussarela",
+    "img": "img/mussarela.png",
+    "price": [19.99],
+    "sizes": ["Único"],
+    "description": "Mussarela e tomate."
+  },
+  {
+    "id": 2,
+    "name": "Milho Cremoso",
+    "img": "img/milho-cremoso.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, milho e catupiry."
+  },
+  {
+    "id": 3,
+    "name": "Marguerita",
+    "img": "img/marguerita.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, tomate e manjericão."
+  },
+  {
+    "id": 4,
+    "name": "Portuguesa",
+    "img": "img/portuguesa.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Presunto, mussarela, ovos e azeitona."
+  },
+  {
+    "id": 5,
+    "name": "Bacon",
+    "img": "img/bacon.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Bacon, cebola e mussarela."
+  },
+  {
+    "id": 6,
+    "name": "Calabresa",
+    "img": "img/calabresa.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Mussarela e calabresa."
+  },
+  {
+    "id": 7,
+    "name": "Baiana",
+    "img": "img/baiana.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Calabresa, ovos, pimenta e mussarela."
+  },
+  {
+    "id": 8,
+    "name": "Três Queijos",
+    "img": "img/queijo.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, parmesão e requeijão."
+  },
+  {
+    "id": 9,
+    "name": "Frango com Catupiry",
+    "img": "img/frango.png",
+    "price": [24.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, frango e catupiry."
+  },
+  {
+    "id": 10,
+    "name": "À Moda",
+    "img": "img/moda.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, frango, catupiry, calabresa e azeitona."
+  },
+  {
+    "id": 11,
+    "name": "Prestígio",
+    "img": "img/prestigio.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, chocolate e coco ralado."
+  },
+  {
+    "id": 12,
+    "name": "Chocorango",
+    "img": "img/chocorango.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, chocolate e morango."
+  },
+  {
+    "id": 13,
+    "name": "Choconana",
+    "img": "img/choconana.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, chocolate e banana."
+  },
+  {
+    "id": 14,
+    "name": "Romeu e Julieta",
+    "img": "img/romeu-julieta.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, goiabada e creme de leite."
+  },
+  {
+    "id": 15,
+    "name": "Brigadeiro",
+    "img": "img/brigadeiro.png",
+    "price": [29.99],
+    "sizes": ["Único"],
+    "description": "Mussarela, chocolate e granulado."
+  },
+  {
+    "id": 16,
+    "name": "Água",
+    "img": "img/agua.png",
+    "price": [3.00],
+    "sizes": ["Único"],
+    "description": "Água mineral."
+  },
+  {
+    "id": 17,
+    "name": "Refrigerante Lata",
+    "img": "img/refri-lata.png",
+    "price": [5.00],
+    "sizes": ["350ml"],
+    "description": "Refrigerante em lata."
+  },
+  {
+    "id": 18,
+    "name": "Refrigerante 600ml",
+    "img": "img/refri-600ml.png",
+    "price": [8.00],
+    "sizes": ["600ml"],
+    "description": "Refrigerante 600ml."
+  },
+  {
+    "id": 19,
+    "name": "Refrigerante 2L",
+    "img": "img/refri-2l.png",
+    "price": [13.00],
+    "sizes": ["2L"],
+    "description": "Refrigerante 2 litros."
+  }
 ]
