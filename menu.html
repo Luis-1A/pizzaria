@@ -22,31 +22,52 @@
 
   <div class="container">
     <div class="container-area">
-      <div class="models">
-        <div class="pizza-item">
-          <a href="">
-            <div class="pizza-item--img"><img src="" /></div>
-            <div class="pizza-item--add">+</div>
-            <div class="pizza-item--price">R$ --</div>
-            <div class="pizza-item--name">--</div>
-            <div class="pizza-item--desc">--</div>
-          </a>
-        </div>
-        <div class="cart--item">
-          <img src="" />
-          <div class="cart--item-nome">--</div>
-          <div class="cart--item--qtarea">
-            <button class="cart--item-qtmenos">-</button>
-            <div class="cart--item--qt">1</div>
-            <button class="cart--item-qtmais">+</button>
-          </div>
-        </div>
-      </div>
+
       <main>
         <h1 class="titulo--h1">Pizzas</h1>
         <nav></nav>
-        <div class="pizza-area"></div>
+        <div class="pizza-area">
+          <!-- Pizza 1 -->
+          <div class="pizza-item">
+            <a href="#">
+              <div class="pizza-item--img">
+                <img src="img/calabresa.jpg" />
+              </div>
+              <div class="pizza-item--add">+</div>
+              <div class="pizza-item--price">R$ 39,90</div>
+              <div class="pizza-item--name">Calabresa</div>
+              <div class="pizza-item--desc">Molho de tomate, mussarela, calabresa e cebola.</div>
+            </a>
+          </div>
+
+          <!-- Pizza 2 -->
+          <div class="pizza-item">
+            <a href="#">
+              <div class="pizza-item--img">
+                <img src="img/margherita.jpg" />
+              </div>
+              <div class="pizza-item--add">+</div>
+              <div class="pizza-item--price">R$ 36,00</div>
+              <div class="pizza-item--name">Margherita</div>
+              <div class="pizza-item--desc">Molho de tomate, mussarela, tomate e manjericão.</div>
+            </a>
+          </div>
+
+          <!-- Pizza 3 -->
+          <div class="pizza-item">
+            <a href="#">
+              <div class="pizza-item--img">
+                <img src="img/frango-catupiry.jpg" />
+              </div>
+              <div class="pizza-item--add">+</div>
+              <div class="pizza-item--price">R$ 42,50</div>
+              <div class="pizza-item--name">Frango com Catupiry</div>
+              <div class="pizza-item--desc">Molho, mussarela, frango desfiado e catupiry.</div>
+            </a>
+          </div>
+        </div>
       </main>
+
       <aside>
         <div class="cart--area">
           <div class="menu-closer">
@@ -75,47 +96,7 @@
           </div>
         </div>
       </aside>
-      <div class="pizzaWindowArea">
-        <div class="pizzaWindowBody modal">
-          <div class="pizzaInfo--cancelMobileButton">
-            <i class="fa-solid fa-arrow-left"></i>
-          </div>
-          <div class="pizzaBig">
-            <img src="" />
-          </div>
-          <div class="pizzaInfo">
-            <h1>--</h1>
-            <div class="pizzaInfo--desc">--</div>
-            <div class="pizzaInfo--sizearea">
-              <div class="pizzaInfo--sector">Tamanho</div>
-              <div class="pizzaInfo--sizes">
-                <div data-key="0" class="pizzaInfo--size">
-                  GRANDE <span>--</span>
-                </div>
-                <div data-key="1" class="pizzaInfo--size">
-                  GRANDE <span>--</span>
-                </div>
-                <div data-key="2" class="pizzaInfo--size selected">
-                  GRANDE <span>--</span>
-                </div>
-              </div>
-            </div>
-            <div class="pizzaInfo--pricearea">
-              <div class="pizzaInfo--sector">Preço</div>
-              <div class="pizzaInfo--price">
-                <div class="pizzaInfo--actualPrice">R$ --</div>
-                <div class="pizzaInfo--qtarea">
-                  <button class="pizzaInfo--qtmenos">-</button>
-                  <div class="pizzaInfo--qt">1</div>
-                  <button class="pizzaInfo--qtmais">+</button>
-                </div>
-              </div>
-            </div>
-            <div class="pizzaInfo--addButton">Adicionar ao carrinho</div>
-            <div class="pizzaInfo--cancelButton">Cancelar</div>
-          </div>
-        </div>
-      </div>
+
       <div class="success pizzaWindowArea">
         <div class="pizzaWindowBody success">
           <div class="pedido-finalizado">
@@ -130,13 +111,13 @@
                   <label for='endereco'>Endereço</label>
                   <input type="text" id="endereco" name='endereco' placeholder="Informe seu endereço" required />
                   <br />
-                   <label for='contato'>Contato</label>
+                  <label for='contato'>Contato</label>
                   <input type="text" id="contato" name='contato' placeholder="Informe seu contato" required />
 
                   <label for='referencia'>Ponto de Referência</label>
                   <input type="text" id="referencia" name='referencia' placeholder="Informe um ponto de referência" />
                   <br />
-                 
+
                   <br />
                   <label for="metodoPagamento">Método de Pagamento</label>
                   <select id="metodoPagamento" name="metodoPagamento" required>
@@ -165,12 +146,15 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
-  <script src="js/nav.js"></script>
-  <script type="text/javascript" src="js/geral.js"></script>
-  <script type="text/javascript" src="js/cart.js"></script>
+  <!-- Scripts opcionais, se quiser funcionalidades extras -->
+   <script src="js/nav.js"></script> 
+  <script type="text/javascript" src="js/geral.js"></script> 
+   <script type="text/javascript" src="js/cart.js"></script> 
+
 </body>
 
 </html>
