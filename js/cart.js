@@ -158,7 +158,7 @@ function enviarPedidoParaWhatsApp() {
     mensagem += `Entrega: ${entrega.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}\n`;
     mensagem += `Total: ${totalFinal.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}`;
 
-    const numeroWhatsApp = "+5561981240738";
+    const numeroWhatsApp = "+556192327129";
     const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
     window.open(linkWhatsApp, "_blank");
 }
